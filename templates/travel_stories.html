@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Bubble</title>
+</head>
+<body>
+   {% for story in travel_stories %} 
+        {{story.category}}<br>
+        {{story.origin}}<br>
+        {{story.origin_country}}<br>
+        {{story.transit}}<br>
+        {{story.transit_country}}<br>
+        {{story.destination}}<br>
+        {{story.destination_country}}<br>
+        {{story.date_of_journey}}<br>
+        {{story.no_of_adults}}<br>
+        {{story.kids_under_12}}<br>
+        {{story.kids_under_6}}<br>
+        {{story.covid_report}}<br>
+        {{story.your_experience}}<br>
+
+   {% endfor %}
+</body  >
+</html>
