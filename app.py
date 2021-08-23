@@ -26,6 +26,29 @@ def travel_stories():
 
 @app.route("/signup", methods = ["GET", "POST"])
 def signup():
+    if request.method == "POST":
+        # check if username and email address exist in database
+        existing_user = mongo.db.find_one(
+            {"username": request.form.get("username").lower()})
+        if existing_user:
+            flash ("Username already exists")
+            return redirect(url_for("signup"))
+        existing_emailaddress = mongo.db.find_one(
+            {"emailaddress": request.form.get("emailaddress").lower()})
+        if existing_emailaddress:
+            flash ("Email address already registered")
+            return redirect(url_for("signup"))
+
+        signup = {
+            "emailaddress": request.form.get("emailaddress").lower(),
+            "username" : request.form.get("username").lower(),
+            "password" : generate_password_hash(request.form.get("password"))            
+        }
+        mongo.db.user_profile.insert_one(signup)
+
+        # put the new user into session cookie
+        session["user_profile"] = request.form.get("username").lower()
+        flash("Sign up successful")
     return render_template("signup.html")
 
 
