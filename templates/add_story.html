@@ -9,13 +9,13 @@
 <div class="container px-5 my-5">
     <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action="">
         <div class="form-floating mb-3">
-            <select class="form-select" id="category" name="category" aria-label="category">
+            <select class="form-select" id="category_name" name="category_name" aria-label="category">
                 <option value=""></option>
-                <option value="Work">Work</option>
-                <option value="Leisure">Leisure</option>
-                <option value="Emergency">Emergency</option>
+                {% for option in category %}
+                    <option value="{{option.category_name}}">{{option.category_name}}</option>
+                {% endfor %}
             </select>
-            <label for="category">category</label>
+            <label for="category_name">Choose Category</label>
         </div>
         <div class="form-floating mb-3">
             <input class="form-control" id="originAirportCode" name="originAirportCode" type="text" minlength="2"
