@@ -1,15 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3> Enter your Credentials </h3>
+
 <div class="container px-5 my-5">
-    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action="{{url_for('signup')}}">
-        <!-- email address -->
-        <div class="mb-3">
-            <label class="form-label" for="emailaddress">Email Address</label>
-            <input class="form-control" id="emailaddress" name="emailaddress" type="email" placeholder="Email Address"
-                required/>
-           
-        </div>
+    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action="{{url_for('login')}}">
+        
         <!-- username -->
         <div class="mb-3">
             <label class="form-label" for="username">Username</label>
@@ -22,20 +18,19 @@
             <input class="form-control" id="password" name="password" type="password" minlength="5"
                 maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Password" required/>            
         </div>
-        <!-- signup button -->
+        <!-- Login -->
         <div class="d-grid">
-            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Sign Up</button>
+            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Login</button>
         </div>
     </form>
 </div>
 
 <div class="row">
     <div class="col">
-        <p> Already signed up? 
-            <a href="">Login</a>
+        <p> New Here? 
+            <a href="">Sign Up</a>
         </p>
     </div>
 </div>
-
 
 {% endblock %}
