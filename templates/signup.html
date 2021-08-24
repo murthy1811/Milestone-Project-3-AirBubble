@@ -27,15 +27,18 @@
             <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Sign Up</button>
         </div>
     </form>
+
+    <div class="row">
+        <div class="col-12 center-align">
+            <p> Already signed up? 
+                <a href="{{url_for('login')}}">Login</a>
+            </p>
+        </div>
+    </div>
+
 </div>
 
-<div class="row">
-    <div class="col">
-        <p> Already signed up? 
-            <a href="">Login</a>
-        </p>
-    </div>
-</div>
+
 
 
 {% endblock %}
