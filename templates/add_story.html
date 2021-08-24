@@ -5,5 +5,94 @@
      Add your travel story
  </h3>
 
+     <!-- form html from start bootstrap -->
+ <div class="container px-5 my-5">
+    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+        <div class="form-floating mb-3">
+            <select class="form-select" id="category" aria-label="category">
+                <option value=""></option>
+                <option value="Work">Work</option>
+                <option value="Leisure">Leisure</option>
+                <option value="Emergency">Emergency</option>
+            </select>
+            <label for="category">category</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="originAirportCode" type="text" placeholder="Origin ( Airport Code)" data-sb-validations="required" />
+            <label for="originAirportCode">Origin ( Airport Code)</label>
+            <div class="invalid-feedback" data-sb-feedback="originAirportCode:required">Origin ( Airport Code) is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="originCountry" type="text" placeholder="Origin country" data-sb-validations="required" />
+            <label for="originCountry">Origin country</label>
+            <div class="invalid-feedback" data-sb-feedback="originCountry:required">Origin country is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="transitAirportCode" type="text" placeholder="Transit( Airport Code)" data-sb-validations="" />
+            <label for="transitAirportCode">Transit( Airport Code)</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="transitCountry" type="text" placeholder="Transit Country" data-sb-validations="" />
+            <label for="transitCountry">Transit Country</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="destinationAirportCode" type="text" placeholder="Destination ( Airport code)" data-sb-validations="required" />
+            <label for="destinationAirportCode">Destination ( Airport code)</label>
+            <div class="invalid-feedback" data-sb-feedback="destinationAirportCode:required">Destination ( Airport code) is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="destinationCountry" type="text" placeholder="Destination country" data-sb-validations="required" />
+            <label for="destinationCountry">Destination country</label>
+            <div class="invalid-feedback" data-sb-feedback="destinationCountry:required">Destination country is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="dateOfJourney" type="text" placeholder="Date of Journey" data-sb-validations="required" />
+            <label for="dateOfJourney">Date of Journey</label>
+            <div class="invalid-feedback" data-sb-feedback="dateOfJourney:required">Date of Journey is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="noOfAdults" type="text" placeholder="No of Adults" data-sb-validations="required" />
+            <label for="noOfAdults">No of Adults</label>
+            <div class="invalid-feedback" data-sb-feedback="noOfAdults:required">No of Adults is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="kidsUnder12" type="text" placeholder="Kids under 12" data-sb-validations="" />
+            <label for="kidsUnder12">Kids under 12</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="kidsUnder6" type="text" placeholder="Kids under 6" data-sb-validations="" />
+            <label for="kidsUnder6">Kids under 6</label>
+        </div>
+        <div class="form-floating mb-3">
+            <select class="form-select" id="covidReport" aria-label="COVID report">
+                <option value=""></option>
+                <option value="Negative RT PCR needed">Negative RT PCR needed</option>
+                <option value="No test report for fully Vaccinated">No test report for fully Vaccinated</option>
+                <option value="Antigen test report only">Antigen test report only</option>
+                <option value="No test report required">No test report required</option>
+            </select>
+            <label for="covidReport">COVID report</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="pleaseShareYourExperienceLikeQuarantineRulesDocumentsNeededRulesInTransitRulesRelatedToKidsEtc" type="text" placeholder="Please share your experience like Quarantine rules, documents needed, rules in transit, rules related to kids etc" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <label for="pleaseShareYourExperienceLikeQuarantineRulesDocumentsNeededRulesInTransitRulesRelatedToKidsEtc">Please share your experience like Quarantine rules, documents needed, rules in transit, rules related to kids etc</label>
+            <div class="invalid-feedback" data-sb-feedback="pleaseShareYourExperienceLikeQuarantineRulesDocumentsNeededRulesInTransitRulesRelatedToKidsEtc:required">Please share your experience like Quarantine rules, documents needed, rules in transit, rules related to kids etc is required.</div>
+        </div>
+        <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">
+                <div class="fw-bolder">Form submission successful!</div>
+                <p>To activate this form, sign up at</p>
+                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+            </div>
+        </div>
+        <div class="d-none" id="submitErrorMessage">
+            <div class="text-center text-danger mb-3">Error sending message!</div>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 {% endblock %}
