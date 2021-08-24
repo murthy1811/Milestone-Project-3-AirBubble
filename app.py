@@ -87,8 +87,9 @@ def login():
 @app.route("/profile/<username>", methods = ["GET", "POST"])
 def profile(username):
     #grab the sesssion user's username from db
-    username = mongo.db.user_profile.find_one({"username": session["user"]})["username"]    
-    return render_template("profile.html", username = username)
+    username = mongo.db.user_profile.find_one({"username": session["user"]})["username"]   
+    emailaddress = mongo.db.user_profile.find_one({"username": session["user"]})["emailaddress"]  
+    return render_template("profile.html", username = username, emailaddress = emailaddress)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
