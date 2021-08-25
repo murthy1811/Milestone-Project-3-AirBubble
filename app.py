@@ -131,6 +131,31 @@ def add_story():
     return render_template("add_story.html", category = category)
 
 
+@app.route("/read_more/<story_id>", methods = ["GET"])
+def read_more(story_id):
+    readstory= mongo.db.travel_stories.find_one({"_id": ObjectId(story_id)}) 
+    # travelstory= {
+    #         "category_name" : request.form.get("category_name"),
+    #         "origin" : request.form.get("originAirportCode"),
+    #         "origin_country": request.form.get("originCountry"),
+    #         "transit" : request.form.get("transitAirportCode"),
+    #         "transit_country" : request.form.get("transitCountry"),
+    #         "destination" : request.form.get("destinationAirportCode"),
+    #         "destination_country" : request.form.get("destinationCountry"),
+    #         "date_of_journey": request.form.get("dateOfJourney"),
+    #         "no_of_adults" : request.form.get("noOfAdults"),
+    #         "kids_under_12" : request.form.get("kidsUnder12"),
+    #         "kids_under_6" : request.form.get("kidsUnder6"),
+    #         "covid_report" : request.form.getlist("covidReport"),
+    #         "your_experience" : request.form.get("experience"),
+    #         "added_by" : session["user"]           
+    #     }
+    
+    # mongo.db.travel_stories.read({"_id":ObjectId(story_id)}, travelstory)
+    return render_template("read_more.html", readstory=readstory)
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

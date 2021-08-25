@@ -11,13 +11,18 @@
         action="{{url_for('add_story')}}" novalidate>
         <!-- category name -->
         <div class="form-floating mb-3">
-            <select class="form-select" id="category_name" name="category_name" aria-label="category">
+            <select class="form-select" id="category_name" name="category_name" aria-label="category" required>
                 <option value=""></option>
                 {% for option in category %}
                 <option value="{{option.category_name}}">{{option.category_name}}</option>
                 {% endfor %}
             </select>
             <label for="category_name">Choose Category</label>
+
+            <div class="invalid-feedback" >
+                Choose a Category
+             </div>
+
         </div>
         <!-- origin airport -->    
         <div class="form-row">

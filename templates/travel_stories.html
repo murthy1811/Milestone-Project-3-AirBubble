@@ -60,7 +60,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{story.origin}}- {{story.destination}} </h5>
                                 <p class="card-text">{{story.your_experience}}</p>
-                                <a href="#" class="btn btn-primary">Read more</a>
+                                <a href="{{url_for('read_more', story_id=story._id)}}" class="btn btn-primary">Read more</a>
                             </div>
 
                             <div class="card-body">
