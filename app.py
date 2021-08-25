@@ -104,10 +104,30 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route("/add_story")
+@app.route("/add_story", methods = ["GET", "POST"])
 def add_story():
-    category = mongo.db.category.find().sort("category_name", -1)
+    if request.method == "POST":
+        travelstory= {
+            "category_name" : request.form.get("category_name"),
+            "origin" : request.form.get("originAirportCode"),
+            "origin_country": request.form.get("originCountry"),
+            "transit" : request.form.get("transitAirportCode"),
+            "transit_country" : request.form.get("transitCountry"),
+            "destination" : request.form.get("destinationAirportCode"),
+            "destination_country" : request.form.get("destinationCountry"),
+            "date_of_journey": request.form.get("dateOfJourney"),
+            "no_of_adults" : request.form.get("noOfAdults"),
+            "kids_under_12" : request.form.get("kidsUnder12"),
+            "kids_under_6" : request.form.get("kidsUnder6"),
+            "covid_report" : request.form.getlist("covidReport"),
+            "your_experience" : request.form.get("experience"),
+            "added_by" : session["user"]           
+        }
+        mongo.db.travel_stories.insert_one(travelstory)
+        flash("Your Travel Story is added successfully")
+        return redirect(url_for("travel_stories"))
 
+    category = mongo.db.category.find().sort("category_name", -1)
     return render_template("add_story.html", category = category)
 
 
