@@ -88,10 +88,11 @@ def login():
 def profile(username):
     #grab the sesssion user's username from db
     username = mongo.db.user_profile.find_one({"username": session["user"]})["username"]   
-    emailaddress = mongo.db.user_profile.find_one({"username": session["user"]})["emailaddress"] 
+    emailaddress = mongo.db.user_profile.find_one({"username": session["user"]})["emailaddress"]
+    travel_stories= list(mongo.db.travel_stories.find())
 
     if session["user"]:
-        return render_template("profile.html", username = username, emailaddress = emailaddress)
+        return render_template("profile.html", username = username, emailaddress = emailaddress, travel_stories=travel_stories)
 
     return redirect(url_for('login'))
 

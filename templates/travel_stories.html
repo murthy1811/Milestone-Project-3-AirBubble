@@ -60,6 +60,7 @@
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">{{story.origin}}- {{story.destination}} </h5>
+                                <h6 class="card-title">{{story.origin_country}}- {{story.destination_country}} </h6>
                                 <p class="card-text">{{story.date_of_journey}}</p>
                                 <a href="{{url_for('read_more', story_id=story._id)}}" class="btn btn-primary">Read more</a>
                             </div>
@@ -151,20 +152,4 @@
         </div>
     </section>   
 
-<!-- {% for story in travel_stories %} 
-        {{story.category}}<br>
-        {{story.origin}}<br>
-        {{story.origin_country}}<br>
-        {{story.transit}}<br>
-        {{story.transit_country}}<br>
-        {{story.destination}}<br>
-        {{story.destination_country}}<br>
-        {{story.date_of_journey}}<br>
-        {{story.no_of_adults}}<br>
-        {{story.kids_under_12}}<br>
-        {{story.kids_under_6}}<br>
-        {{story.covid_report}}<br>
-        {{story.your_experience}}<br> -->
-
-   <!-- {% endfor %} -->
    {% endblock %}
