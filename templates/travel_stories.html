@@ -53,23 +53,24 @@
     <section class="features-icons bg-light text-center">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
+                {% for story in travel_stories %}
+                <div class="col-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        {% for story in travel_stories %}
+    
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">{{story.origin}}- {{story.destination}} </h5>
-                                <p class="card-text">{{story.your_experience}}</p>
+                                <p class="card-text">{{story.date_of_journey}}</p>
                                 <a href="{{url_for('read_more', story_id=story._id)}}" class="btn btn-primary">Read more</a>
                             </div>
-
+    
                             <div class="card-body">
                                 <p class="card-text">{{story.added_by}}</p>
                             </div>
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
+                {% endfor %}
     
             </div>
         </div>

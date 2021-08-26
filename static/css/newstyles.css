@@ -9,3 +9,11 @@
     padding-top: 50px;
     font-weight: 300;
 }
+
+.form-info {
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: cornflowerblue;
+    font-size: large;
+}
