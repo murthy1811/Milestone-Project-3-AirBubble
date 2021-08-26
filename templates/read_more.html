@@ -1,8 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for readstory in readstories %}
-            <h3>{{readstory["category_name"]}}</h3>
-         {% endfor %}
+
+<div class="container px-5 my-5 center-align">
+    {% for story in travel_stories %}
+        <div class="row " >
+             <div class="col-lg-8 ">            
+                Category : {{story.category_name}}
+             </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-8 ">            
+                Origin: {{story.origin}}
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-8 ">            
+                Origin Country : {{story.origin_country}}
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-8 ">            
+                Transit : {{story.transit}}
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-8 ">            
+                Transit Country : {{story.transit_country}}
+            </div>
+        </div>
+
+
+       
+                
+                
+                
+                
+                Destination: {{story.destination}}
+                Destination Country : {{story.destination_country}}
+                Date of Journey : {{story.date_of_journey}}
+                No of Adults : {{story.no_of_adults}}
+                Kids Under 12 : {{story.kids_under_12}}
+                Kids Under 6 : {{story.kids_under_6}}
+                Covid Report : {{story.covid_report}}
+                My Experience : {{story.your_experience}}
+                Added By : {{story.added_by}}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
