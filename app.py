@@ -140,8 +140,27 @@ def read_more(story_id):
 
 @app.route("/edit_story/<story_id>", methods=["GET", "POST"])
 def edit_story(story_id):
+    if request.method == "POST":
+        submitstory= {
+            "category_name" : request.form.get("category_name"),
+            "origin" : request.form.get("originAirportCode"),
+            "origin_country": request.form.get("originCountry"),
+            "transit" : request.form.get("transitAirportCode"),
+            "transit_country" : request.form.get("transitCountry"),
+            "destination" : request.form.get("destinationAirportCode"),
+            "destination_country" : request.form.get("destinationCountry"),
+            "date_of_journey": request.form.get("dateOfJourney"),
+            "no_of_adults" : request.form.get("noOfAdults"),
+            "kids_under_12" : request.form.get("kidsUnder12"),
+            "kids_under_6" : request.form.get("kidsUnder6"),
+            "covid_report" : request.form.getlist("covidReport"),
+            "your_experience" : request.form.get("experience"),
+            "added_by" : session["user"]           
+        }
+        mongo.db.travel_stories.update({"_id" : ObjectId(story_id)},submitstory)
+        flash("Your Travel Story is updated successfully")
+        
     story = mongo.db.travel_stories.find_one({"_id" : ObjectId(story_id)})
-
     category = mongo.db.category.find().sort("category_name", -1)
     return render_template("edit_story.html", story=story, category = category)
 
