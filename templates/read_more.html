@@ -89,7 +89,7 @@
         </div>       
         
         
-        <a href="#" class="btn btn-style btn-primary">Edit</a>
+        <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>
         <a href="#" class="btn btn-style btn-primary btn-danger ">Delete</a>
                 
     {% endfor %}        

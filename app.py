@@ -138,6 +138,13 @@ def read_more(story_id):
     return render_template("read_more.html",travel_stories = travel_stories)
 
 
+@app.route("/edit_story/<story_id>", methods=["GET", "POST"])
+def edit_story(story_id):
+    story = mongo.db.travel_stories.find_one({"_id" : ObjectId(story_id)})
+
+    category = mongo.db.category.find().sort("category_name", -1)
+    return render_template("edit_story.html", story=story, category = category)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
