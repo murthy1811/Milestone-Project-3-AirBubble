@@ -24,6 +24,12 @@ def travel_stories():
     return render_template("travel_stories.html", travel_stories = travel_stories)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    travel_stories= list(mongo.db.travel_stories.find({"$text": {"$search": query}}))
+    return render_template("travel_stories.html", travel_stories = travel_stories)
+
 @app.route("/signup", methods = ["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -170,6 +176,10 @@ def delete_story(story_id):
     mongo.db.travel_stories.remove({"_id":ObjectId(story_id)})
     flash("Your Travel Story is successfully deleted")
     return redirect(url_for('profile', username=session["user"]))
+
+
+
+
 
 
 if __name__ == "__main__":
