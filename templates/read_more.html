@@ -86,7 +86,8 @@
             <div class="col-lg-8 ">            
                 <strong> Added By  </strong> : <em>{{story.added_by}} </em>
             </div>
-        </div>       
+        </div>     
+
         
         {% if session.user|lower == story.added_by|lower %}
         <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>
