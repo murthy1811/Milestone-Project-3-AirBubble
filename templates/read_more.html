@@ -95,16 +95,18 @@
     {% endif %}
     {% endfor %}
 
+
+
     <div class="row">
         <p> Comments : </p>
     </div>
-    
+
     <div class="form-row">
         <input class="form-control" id="comment" name="comment" type="text" minlength="2" maxlength="600"
             placeholder="Make a comment" required />
-    
+
         {% for comment in user_comments %}
-        <a href="{{url_for('read_more',comment_id =comment._id)}}" class="btn btn-primary">Send</a>
+        <a href="#" class="btn btn-primary">Send</a>
         {% endfor %}
     </div>
 </div>

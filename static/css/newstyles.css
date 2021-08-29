@@ -22,3 +22,15 @@
     margin: 5px;
 }
 
+.nav-item{
+    padding-left: 10px;
+}
+
+.profile-info {
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: cornflowerblue;
+    font-size: large;
+    padding-top: 50px;
+}
