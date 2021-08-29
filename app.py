@@ -182,7 +182,8 @@ def delete_story(story_id):
 def comments(comment_id):
     if request.method == "POST":
         usercomment= {"comment" : request.form.get("comment")} 
-        mongo.db.user_comments.insert_one({"_id" : ObjectId(comment_id)},usercomment)
+        mongo.db.user_comments.insert_one(usercomment)
+        return redirect(url_for("read_more", comment_id=ObjectId["._id"]))
     
     user_comments= mongo.db.user_comments.find({"_id": ObjectId(comment_id)})
     return render_template("read_more.html",user_comments = user_comments)

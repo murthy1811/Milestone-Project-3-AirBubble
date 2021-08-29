@@ -4,121 +4,111 @@
 
 <div class="container px-5 my-5 ">
     {% for story in travel_stories %}
-        <div class="row form-info " >
-             <div class="col-lg-8 ">            
-               <strong>Category </strong>  : {{story.category_name}}
-             </div>
+    <div class="row form-info ">
+        <div class="col-lg-8 ">
+            <strong>Category </strong> : {{story.category_name}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> Origin </strong>: {{story.origin}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Origin </strong>: {{story.origin}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> Origin Country </strong> : {{story.origin_country}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Origin Country </strong> : {{story.origin_country}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> Transit </strong> : {{story.transit}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Transit </strong> : {{story.transit}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong>  Transit Country </strong>: {{story.transit_country}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Transit Country </strong>: {{story.transit_country}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong>Destination </strong>: {{story.destination}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong>Destination </strong>: {{story.destination}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> Destination Country </strong> : {{story.destination_country}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Destination Country </strong> : {{story.destination_country}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong>Date of Journey </strong> : {{story.date_of_journey}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong>Date of Journey </strong> : {{story.date_of_journey}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> No of Adults </strong> : {{story.no_of_adults}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> No of Adults </strong> : {{story.no_of_adults}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> Kids Under 12 </strong> : {{story.kids_under_12}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Kids Under 12 </strong> : {{story.kids_under_12}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> Kids Under 6 </strong> : {{story.kids_under_6}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Kids Under 6 </strong> : {{story.kids_under_6}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> Covid Report </strong> : {{story.covid_report}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Covid Report </strong> : {{story.covid_report}}
         </div>
+    </div>
 
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> My Experience </strong> : {{story.your_experience}}
-            </div>
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> My Experience </strong> : {{story.your_experience}}
         </div>
-       
-        <div class="row form-info" >
-            <div class="col-lg-8 ">            
-                <strong> Added By  </strong> : <em>{{story.added_by}} </em>
-            </div>
-        </div>     
+    </div>
 
-        
-        {% if session.user|lower == story.added_by|lower %}
-        <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>
-        <a href="{{url_for('delete_story', story_id = story._id)}}" class="btn btn-style btn-primary btn-danger ">Delete</a>
-         {% endif %}       
-    {% endfor %}   
-    
-    
+    <div class="row form-info">
+        <div class="col-lg-8 ">
+            <strong> Added By </strong> : <em>{{story.added_by}} </em>
+        </div>
+    </div>
+
+
+    {% if session.user|lower == story.added_by|lower %}
+    <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>
+    <a href="{{url_for('delete_story', story_id = story._id)}}" class="btn btn-style btn-primary btn-danger ">Delete</a>
+    {% endif %}
+    {% endfor %}
+
     <div class="row">
         <p> Comments : </p>
-       
     </div>
-
+    
     <div class="form-row">
-        <div class="form-floating mb-3">
-            <input class="form-control" id="comment"
-                name="comment" type="text" minlength="2" maxlength="600"
-                placeholder="Make a comment" required/>
-            <a href="{{url_for('comments'), comment_id = comment._id}}" class="btn btn-primary">Send</a>
-        </div>
-          
+        <input class="form-control" id="comment" name="comment" type="text" minlength="2" maxlength="600"
+            placeholder="Make a comment" required />
+    
+        {% for comment in user_comments %}
+        <a href="{{url_for('read_more',comment_id =comment._id)}}" class="btn btn-primary">Send</a>
+        {% endfor %}
     </div>
+</div>
 
-{% endblock %}                
-                
-                
-                
-                
-                
-                
-                
-                
-            
-        
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+{% endblock %}
