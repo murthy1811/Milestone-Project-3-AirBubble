@@ -178,7 +178,14 @@ def delete_story(story_id):
     return redirect(url_for('profile', username=session["user"]))
 
 
-
+@app.route("/comments/<comment_id>" , methods = ["GET", "POST"])
+def comments(comment_id):
+    if request.method == "POST":
+        usercomment= {"comment" : request.form.get("comment")} 
+        mongo.db.user_comments.insert_one({"_id" : ObjectId(comment_id)},usercomment)
+    
+    user_comments= mongo.db.user_comments.find({"_id": ObjectId(comment_id)})
+    return render_template("read_more.html",user_comments = user_comments)
 
 
 
