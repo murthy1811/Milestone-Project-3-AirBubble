@@ -94,20 +94,22 @@
     <a href="{{url_for('delete_story', story_id = story._id)}}" class="btn btn-style btn-primary btn-danger ">Delete</a>
     {% endif %}
 
+    <div class="row">
+        <h3> Comments</h3>
+    </div>
 
     {% for comment in comments %}
     <div class="row">
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-12">
             <p>{{comment.comment}}</p>
         </div>
     </div>
     {% endfor %}
     
-    
-    <div class="row">
-        <p> Comments : </p>
-    </div>
 
+    <div class="row">
+        <h4> Leave your comments below </h3>
+    </div>
     <form class="needs-validation" id="commentform" method="POST" action="{{url_for('comments', story_id = story._id)}}" novalidate>
         <div class="form-row">
             <div class="form-floating mb-3">

@@ -184,7 +184,6 @@ def comments(story_id):
     if request.method == "POST":
         usercomment= {"comment" : request.form.get("comment")} 
         mongo.db.user_comments.insert_one(usercomment)
-        flash("your comment added successfully")
         return redirect(url_for('read_more', story_id = story_id))
 
     
