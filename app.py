@@ -138,9 +138,14 @@ def add_story():
     return render_template("add_story.html", category = category)
 
 
-@app.route("/read_more/<story_id>", methods = ["GET"])
+@app.route("/read_more/<story_id>", methods = ["GET", "POST"])
 def read_more(story_id):
-    travel_stories= mongo.db.travel_stories.find({"_id": ObjectId(story_id)})
+    travel_stories= list(mongo.db.travel_stories.find({"_id": ObjectId(story_id)}))
+    if request.method == "POST":
+        usercomment= {"comment" : request.form.get("comment")} 
+        mongo.db.user_comments.insert_one(usercomment)
+
+
     return render_template("read_more.html",travel_stories = travel_stories)
 
 
@@ -178,15 +183,17 @@ def delete_story(story_id):
     return redirect(url_for('profile', username=session["user"]))
 
 
-@app.route("/comments/<comment_id>" , methods = ["GET", "POST"])
-def comments(comment_id):
-    if request.method == "POST":
-        usercomment= {"comment" : request.form.get("comment")} 
-        mongo.db.user_comments.insert_one(usercomment)
-        return redirect(url_for("read_more", comment_id=ObjectId["._id"]))
+# @app.route("/comments<story_id>" , methods = ["GET", "POST"])
+# def comments(story_id):
+#     if request.method == "POST":
+#         usercomment= {"comment" : request.form.get("comment")} 
+#         mongo.db.user_comments.insert_one(usercomment)
+#         travel_stories= mongo.db.travel_stories.find({"_id": ObjectId(story_id)})
+#         return redirect(url_for("read_more", story_id = story_id))
+
     
-    user_comments= mongo.db.user_comments.find({"_id": ObjectId(comment_id)})
-    return render_template("read_more.html",user_comments = user_comments)
+
+    
 
 
 

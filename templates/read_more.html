@@ -101,14 +101,25 @@
         <p> Comments : </p>
     </div>
 
-    <div class="form-row">
-        <input class="form-control" id="comment" name="comment" type="text" minlength="2" maxlength="600"
-            placeholder="Make a comment" required />
+    {% for story in travel_stories %}
+    <form class="needs-validation" id="commentform" method="POST" action="{{url_for('read_more',story_id = story._id)}}" novalidate>
+        <div class="form-row">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="comment" 
+                    name="comment" type="text" minlength="2" maxlength="300"
+                    placeholder="Make a Comment" required/>
+                <label for="commentform"></label>
+                <div class="invalid-feedback" >
+                    Text is required.
+                </div>
+            </div>
 
-        {% for comment in user_comments %}
-        <a href="#" class="btn btn-primary">Send</a>
-        {% endfor %}
-    </div>
+            <div class="d-grid">
+                <button class="btn btn-primary btn-lg" id="sendButton" type="submit">Send</button>
+            </div>
+
+    </form>
+    {% endfor %}
 </div>
 
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
