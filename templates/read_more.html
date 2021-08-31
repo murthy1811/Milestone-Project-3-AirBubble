@@ -98,13 +98,17 @@
         <h3> Comments</h3>
     </div>
 
+    
     {% for comment in comments %}
+    {% if comment.linked_travel_id == story._id %}
     <div class="row">
         <div class="col-12">
             <p>{{comment.comment}}</p>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
+    
     
 
     <div class="row">

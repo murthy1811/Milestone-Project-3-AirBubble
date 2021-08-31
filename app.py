@@ -181,8 +181,12 @@ def delete_story(story_id):
 
 @app.route("/comments/<story_id>" , methods = ["GET", "POST"])
 def comments(story_id):
+    linked_travelstory = ObjectId(story_id)
     if request.method == "POST":
-        usercomment= {"comment" : request.form.get("comment")} 
+        usercomment= {
+            "comment" : request.form.get("comment"),
+            "linked_travel_id" :  linked_travelstory
+        } 
         mongo.db.user_comments.insert_one(usercomment)
         return redirect(url_for('read_more', story_id = story_id))
 
