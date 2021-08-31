@@ -175,6 +175,7 @@ def edit_story(story_id):
 @app.route("/delete_story/<story_id>")
 def delete_story(story_id):
     mongo.db.travel_stories.remove({"_id":ObjectId(story_id)})
+    mongo.db.user_comments.remove({"linked_travel_id" : ObjectId(story_id)})
     flash("Your Travel Story is successfully deleted")
     return redirect(url_for('profile', username=session["user"]))
 
