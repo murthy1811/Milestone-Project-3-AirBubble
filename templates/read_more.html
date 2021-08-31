@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+        <!-- travel story full information -->
 
 <div class="container px-5 my-5 ">
     {% for story in travel_stories %}
@@ -88,17 +89,18 @@
         </div>
     </div>
 
-
+      <!-- edit and delete buttons for the user in session -->
     {% if session.user|lower == story.added_by|lower %}
     <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>
     <a href="{{url_for('delete_story', story_id = story._id)}}" class="btn btn-style btn-primary btn-danger ">Delete</a>
     {% endif %}
 
+      <!-- comments display which are made by user -->
+
     <div class="row">
         <h3> Comments</h3>
     </div>
 
-    
     {% for comment in comments %}
     {% if comment.linked_travel_id == story._id %}
     <div class="row">
@@ -108,20 +110,20 @@
     </div>
     {% endif %}
     {% endfor %}
-    
-    
 
+     <!-- comments input section for user to interact -->
     <div class="row">
         <h4> Leave your comments below </h3>
     </div>
-    <form class="needs-validation" id="commentform" method="POST" action="{{url_for('comments', story_id = story._id)}}" novalidate>
+    
+    <form class="needs-validation" id="commentform" method="POST" action="{{url_for('comments', story_id = story._id)}}"
+        novalidate>
         <div class="form-row">
             <div class="form-floating mb-3">
-                <input class="form-control" id="comment" 
-                    name="comment" type="text" minlength="2" maxlength="300"
-                    placeholder="Make a Comment" required/>
+                <input class="form-control" id="comment" name="comment" type="text" minlength="2" maxlength="300"
+                    placeholder="Make a Comment" required />
                 <label for="commentform"></label>
-                <div class="invalid-feedback" >
+                <div class="invalid-feedback">
                     Text is required.
                 </div>
             </div>
@@ -129,9 +131,8 @@
             <div class="d-grid">
                 <button class="btn btn-primary btn-lg" id="sendButton" type="submit">Send</button>
             </div>
-
     </form>
-    
+
     {% endfor %}
 </div>
 

@@ -108,7 +108,7 @@
             <!-- Covid report-->
             <div class="form-floating mb-3">
 
-                <select class="form-select" id="covidReport" name="covidReport" aria-label="COVID report">
+                <select class="form-select" id="covidReport" name="covidReport" aria-label="COVID report" required>
                     <option value=""></option>
                     <option value="Negative RT PCR needed">Negative RT PCR needed</option>
                     <option value="No test report for fully Vaccinated">No test report for
@@ -131,11 +131,8 @@
 
         </div>
 
-
-
         <div class="d-grid">
             <!-- cancel button -->
-
             <a href="{{url_for('travel_stories')}}" class="btn btn-danger btn-style btn-lg btn-primary">Cancel</a>
             <!-- edit button -->
             <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Edit my Story</button>

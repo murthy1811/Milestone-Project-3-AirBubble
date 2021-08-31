@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
+ <!-- form code from start bootstrap theme -->
 <div class="container px-5 my-5">
-    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action="{{url_for('signup')}}">
+    <form id="contactForm" method="POST" action="{{url_for('signup')}}">
         <!-- email address -->
         <div class="mb-3">
             <label class="form-label" for="emailaddress">Email Address</label>
             <input class="form-control" id="emailaddress" name="emailaddress" type="email" placeholder="Email Address"
-                required/>
-           
+                required />
         </div>
         <!-- username -->
         <div class="mb-3">
             <label class="form-label" for="username">Username</label>
-            <input class="form-control" id="username" name="username" type="text" minlength="5"
-                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Username" required/>            
+            <input class="form-control" id="username" name="username" type="text" minlength="5" maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Username" required />
         </div>
         <!-- password -->
         <div class="mb-3">
             <label class="form-label" for="password">Password</label>
-            <input class="form-control" id="password" name="password" type="password" minlength="5"
-                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Password" required/>            
+            <input class="form-control" id="password" name="password" type="password" minlength="5" maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Password" required />
         </div>
         <!-- signup button -->
         <div class="d-grid">
@@ -28,17 +28,13 @@
         </div>
     </form>
 
+     <!-- advice to login -->
     <div class="row">
         <div class="col-12 center-align">
-            <p> Already signed up? 
+            <p> Already signed up?
                 <a href="{{url_for('login')}}">Login</a>
             </p>
         </div>
     </div>
-
 </div>
-
-
-
-
 {% endblock %}

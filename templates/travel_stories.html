@@ -1,77 +1,77 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="text-center text-white">
-                        <!-- Page heading-->
-                        <h1 class="mb-5">Read, Share your air travel stories to help the fellow travellers during COVID times!</h1>
-                        <!-- Search function-->
-                        <form class="form-subscribe" id="contactForm" action="{{url_for('search')}}" method="POST" >
-                            <!-- search input-->
-                            <div class="row "> 
-                                <div class="col">    
-                                                               
-                                    <input class="form-control form-control-lg" id="query" name="query" type="text"
-                                        minlength="2" placeholder="Search for travel stories" required/>
-                                    <label for="query"></label>
-                                    <div class="invalid-feedback text-white" >use text only</div>                                    
-                                </div>
-                                <div class="col-auto">
-                                    <a href="{{url_for('travel_stories')}}" class="btn btn-danger btn-primary btn-lg">Reset</a>
-                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Search</button>
-                                </div>
-                                
+<!-- hero image -->
+ <!-- bootstrap template theme - landing page -->
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">Read, Share your air travel stories to help the fellow travellers during COVID
+                        times!</h1>
+                    <!-- Search function-->
+                    <form class="form-subscribe" id="contactForm" action="{{url_for('search')}}" method="POST">
+                        <!-- search input-->
+                        <div class="row ">
+                            <div class="col">
+
+                                <input class="form-control form-control-lg" id="query" name="query" type="text"
+                                    minlength="2" placeholder="Search for travel stories" required />
+                                <label for="query"></label>
+                                <div class="invalid-feedback text-white">use text only</div>
                             </div>
-                            
-                        </form>
-                    </div>
+                            <div class="col-auto">
+                                <a href="{{url_for('travel_stories')}}"
+                                    class="btn btn-danger btn-primary btn-lg">Reset</a>
+                                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Search</button>
+                            </div>
+
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
-    </header>
-    <!-- Icons Grid-->
-    <section class="features-icons bg-light text-center">
-        <div class="container">
-            <div class="row">
-                {% for story in travel_stories %}
-                <div class="col-lg-4 col-sm-6">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-    
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">{{story.origin}}- {{story.destination}} </h5>
-                                <h6 class="card-title">{{story.origin_country}}- {{story.destination_country}} </h6>
-                                <p class="card-text">{{story.date_of_journey}}</p>
-                                <a href="{{url_for('read_more', story_id=story._id)}}" class="btn btn-primary">Read more</a>
-                            </div>
-    
-                            <div class="card-body">
-                                <p class="card-text">Added by : {{story.added_by}}</p>
-                            </div>
+    </div>
+</header>
+<!--travel stories grid-->
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
+            {% for story in travel_stories %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{story.origin}}- {{story.destination}} </h5>
+                            <h6 class="card-title">{{story.origin_country}}- {{story.destination_country}} </h6>
+                            <p class="card-text">{{story.date_of_journey}}</p>
+                            <a href="{{url_for('read_more', story_id=story._id)}}" class="btn btn-primary">Read more</a>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Added by : {{story.added_by}}</p>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-    
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Call to Signup-->
+<section class="call-to-action text-white text-center" id="signup">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <h2 class="mb-4">Ready to share? Sign up now!</h2>
+                <a class="btn btn-primary" href="{{url_for('signup')}}">Sign Up</a>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-   <!-- Call to Singup-->
-    <section class="call-to-action text-white text-center" id="signup">
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <h2 class="mb-4">Ready to share? Sign up now!</h2>
-                    <a class="btn btn-primary" href="{{url_for('signup')}}">Sign Up</a>
-                    
-                </div>
-            </div>
-        </div>
-    </section>   
-
-   {% endblock %}
+{% endblock %}

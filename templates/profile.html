@@ -1,58 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-
 <div class="container px-5 my-5">
-    <div class="row">
-        <h3 class="center-align">
-           <strong> {{username}}'s Profile</strong>
-        </h3>
-    </div>
+     <!-- user's profile -->
+  <div class="row">
+    <h3 class="center-align">
+      <strong> {{username}}'s Profile</strong>
+    </h3>
+  </div>
+    <!-- user information -->
+  <div class="row profile-info">
+    <h4> Your Email Address = {{ emailaddress }}</h4>
+    <h4> Your Username = {{ username }}</h4>
+  </div>
+    <!-- user added stories -->
+  <div class="row">
+    <h4 class="profile-info"> Your Stories</h4>
+    {% for story in travel_stories %}
+    {% if session.user|lower == story.added_by|lower %}
+    <div class="col-4">
+      <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{story.origin}}- {{story.destination}} </h5>
+            <h6 class="card-title">{{story.origin_country}}- {{story.destination_country}} </h6>
+            <p class="card-text">{{story.date_of_journey}}</p>
+            <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>
+            <a href="{{url_for('delete_story', story_id = story._id)}}"
+              class="btn btn-style btn-primary btn-danger ">Delete</a>
+          </div>
 
-    <div class="row profile-info">
-        <h4> Your Email Address = {{ emailaddress }}</h4>
-        <h4> Your Username = {{ username }}</h4>
-    </div>
-
-
-    <div class="row">
-
-        <h4 class="profile-info"> Your Stories</h4>
-        {% for story in travel_stories %}
-        {% if session.user|lower == story.added_by|lower %}
-
-        <div class="col-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{story.origin}}- {{story.destination}} </h5>
-                        <h6 class="card-title">{{story.origin_country}}- {{story.destination_country}} </h6>
-                        <p class="card-text">{{story.date_of_journey}}</p>
-                        <a href="{{url_for('edit_story', story_id = story._id)}}"
-                            class="btn btn-style btn-primary">Edit</a>
-                        <a href="{{url_for('delete_story', story_id = story._id)}}"
-                                class="btn btn-style btn-primary btn-danger ">Delete</a>
-                        </div>
-
-                        <div class="card-body">
-                            <p class="card-text">{{story.added_by}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
+          <div class="card-body">
+            <p class="card-text">{{story.added_by}}</p>
+          </div>
         </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
   </button>
-  
+
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -71,8 +66,8 @@
       </div>
     </div>
   </div>
-        
-        </div>
+
+</div>
 
 </div>
 

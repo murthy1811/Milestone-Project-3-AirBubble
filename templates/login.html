@@ -5,18 +5,18 @@
 
 <div class="container px-5 my-5">
     <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action="{{url_for('login')}}">
-        
+
         <!-- username -->
         <div class="mb-3">
             <label class="form-label" for="username">Username</label>
-            <input class="form-control" id="username" name="username" type="text" minlength="5"
-                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Username" required/>            
+            <input class="form-control" id="username" name="username" type="text" minlength="5" maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Username" required />
         </div>
         <!-- password -->
         <div class="mb-3">
             <label class="form-label" for="password">Password</label>
-            <input class="form-control" id="password" name="password" type="password" minlength="5"
-                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Password" required/>            
+            <input class="form-control" id="password" name="password" type="password" minlength="5" maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Password" required />
         </div>
         <!-- Login -->
         <div class="d-grid">
@@ -25,9 +25,10 @@
     </form>
 </div>
 
+    <!-- sign up advice -->
 <div class="row">
     <div class="col-12 center-align">
-        <p> New Here? 
+        <p> New Here?
             <a href="{{url_for('signup')}}">Sign Up</a>
         </p>
     </div>

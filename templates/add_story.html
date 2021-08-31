@@ -7,8 +7,7 @@
 
 <!-- form html from start bootstrap -->
 <div class="container px-5 my-5">
-    <form class="needs-validation" id="contactForm"  method="POST"
-        action="{{url_for('add_story')}}" novalidate>
+    <form class="needs-validation" id="contactForm" method="POST" action="{{url_for('add_story')}}" novalidate>
         <!-- category name -->
         <div class="form-floating mb-3">
             <select class="form-select" id="category_name" name="category_name" aria-label="category" required>
@@ -18,27 +17,23 @@
                 {% endfor %}
             </select>
             <label for="category_name">Choose Category</label>
-
-            <div class="invalid-feedback" >
+            <div class="invalid-feedback">
                 Choose a Category
-             </div>
-
+            </div>
         </div>
-        <!-- origin airport -->    
+        <!-- origin airport -->
         <div class="form-row">
             <div class="form-floating mb-3">
-                <input class="form-control" id="originAirportCode" 
-                    name="originAirportCode" type="text" minlength="2" maxlength="20"
-                    placeholder="Origin ( Airport Code)" pattern="^[a-zA-Z]{1,20}$" required/>
+                <input class="form-control" id="originAirportCode" name="originAirportCode" type="text" minlength="2"
+                    maxlength="20" placeholder="Origin ( Airport Code)" pattern="^[a-zA-Z]{1,20}$" required />
                 <label for="originAirportCode">Origin ( Airport Code)</label>
-                <div class="invalid-feedback" >
+                <div class="invalid-feedback">
                     Origin ( Airport Code) is required.</div>
             </div>
             <!-- origin country -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="originCountry" name="originCountry"
-                    type="text" minlength="2" maxlength="20"
-                    placeholder="Origin country" pattern="^[a-zA-Z]{1,20}$" required />
+                <input class="form-control" id="originCountry" name="originCountry" type="text" minlength="2"
+                    maxlength="20" placeholder="Origin country" pattern="^[a-zA-Z]{1,20}$" required />
                 <label for="originCountry">Origin country</label>
                 <div class="invalid-feedback">
                     Origin country is required.</div>
@@ -57,56 +52,51 @@
             </div>
             <!-- destination airport -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="destinationAirportCode" 
-                    name="destinationAirportCode" type="text" minlength="2" 
-                    maxlength="20" placeholder="Destination ( Airport code)" 
-                    pattern="^[a-zA-Z]{1,20}$" required />
+                <input class="form-control" id="destinationAirportCode" name="destinationAirportCode" type="text"
+                    minlength="2" maxlength="20" placeholder="Destination ( Airport code)" pattern="^[a-zA-Z]{1,20}$"
+                    required />
                 <label for="destinationAirportCode">Destination ( Airport code)</label>
-                <div class="invalid-feedback" >
+                <div class="invalid-feedback">
                     Destination ( Airport code) is required.</div>
             </div>
             <!-- destination country -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="destinationCountry"
-                     name="destinationCountry" type="text" minlength="2" maxlength="20"
-                      placeholder="Destination country" pattern="^[a-zA-Z]{1,20}$"
-                      required/>
+                <input class="form-control" id="destinationCountry" name="destinationCountry" type="text" minlength="2"
+                    maxlength="20" placeholder="Destination country" pattern="^[a-zA-Z]{1,20}$" required />
                 <label for="destinationCountry">Destination country</label>
-                <div class="invalid-feedback" >
+                <div class="invalid-feedback">
                     Destination country is required.</div>
             </div>
             <!-- date of journey -->
             <div class="form-floating mb-3">
                 <input class="form-control" id="dateOfJourney" name="dateOfJourney" type="text"
-                    placeholder="Date of Journey (dd/mm/yyyy)" required/>
+                    placeholder="Date of Journey (dd/mm/yyyy)" required />
                 <label for="dateOfJourney">Date of Journey (dd/mm/yyyy)</label>
                 <div class="invalid-feedback">
                     Date of Journey is required.</div>
             </div>
             <!--No of adults -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="noOfAdults" name="noOfAdults"
-                     type="number" pattern="^[0-9]{1,20}$" placeholder="No of Adults"
-                     required/>
+                <input class="form-control" id="noOfAdults" name="noOfAdults" type="number" pattern="^[0-9]{1,20}$"
+                    placeholder="No of Adults" required />
                 <label for="noOfAdults">No of Adults</label>
                 <div class="invalid-feedback">
                     No of Adults is required.</div>
             </div>
             <!-- Kids under 12 -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="kidsUnder12" name="kidsUnder12"
-                     type="number" placeholder="Kids under 12">
+                <input class="form-control" id="kidsUnder12" name="kidsUnder12" type="number"
+                    placeholder="Kids under 12">
                 <label for="kidsUnder12">Kids under 12</label>
             </div>
             <!--Kids under 6 -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="kidsUnder6" name="kidsUnder6"
-                     type="number" placeholder="Kids under 6">
+                <input class="form-control" id="kidsUnder6" name="kidsUnder6" type="number" placeholder="Kids under 6">
                 <label for="kidsUnder6">Kids under 6</label>
             </div>
             <!-- Covid report-->
             <div class="form-floating mb-3">
-                <select class="form-select" id="covidReport" name="covidReport" aria-label="COVID report">
+                <select class="form-select" id="covidReport" name="covidReport" aria-label="COVID report" required>
                     <option value=""></option>
                     <option value="Negative RT PCR needed">Negative RT PCR needed</option>
                     <option value="No test report for fully Vaccinated">No test report for
@@ -118,20 +108,17 @@
             </div>
             <!-- experience textbox -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="experience" name="experience" type="text"
-                    placeholder="Please share your experience like Quarantine rules, documents needed, rules in transit,
-                     rules related to kids etc" style="height: 10rem;" required/>
+                <input class="form-control" id="experience" name="experience" type="text" placeholder="Please share your experience like Quarantine rules, documents needed, rules in transit,
+                     rules related to kids etc" style="height: 10rem;" required />
                 </input>
                 <label for="experience">Please share your experience like Quarantine rules,
                     documents needed, rules in transit, rules related to kids etc</label>
                 <div class="invalid-feedback">Please share your experience like Quarantine rules,
-                     documents needed, rules in transit,rules related to kids etc is required.</div>
-                </div>
-    
+                    documents needed, rules in transit,rules related to kids etc is required.</div>
+            </div>
         </div>
 
         <!-- submit button -->
-
         <div class="d-grid">
             <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Share my story</button>
         </div>
