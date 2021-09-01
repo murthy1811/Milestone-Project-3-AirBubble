@@ -4,6 +4,7 @@
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
 */
 
+//  form validity js for travel story
 (function() {
     'use strict';
     window.addEventListener('load', function() {
@@ -22,12 +23,12 @@
     }, false);
   })();
 
-
+//  Defensive js code for delete button in profile page
   $(".confirm").click(function () {
        $('#deleteStory').modal('show');
     });
 
-
+//  change password javascript for Profile page
   $(document).ready(function () {
       $('.changepwd').parent().hide();  
   });

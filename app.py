@@ -103,6 +103,18 @@ def profile(username):
     return redirect(url_for('login'))
 
 
+@app.route("/changePassword/<username>", methods = ["GET", "POST"])
+def changePassword(username):
+    if request.method == "POST":
+        current_password = generate_password_hash(request.form.get("currentPassword"))
+        update_password = {
+            "password" : generate_password_hash(request.form.get("newPassword"))
+        }
+        mongo.db.user_profile.update({"username": session["user"]},update_password)
+        flash("Your Password Updated Successfully")
+    return redirect(url_for('profile',username=session["user"]))
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies

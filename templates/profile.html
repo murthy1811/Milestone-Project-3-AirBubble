@@ -26,7 +26,7 @@
         <!-- current password -->
         <div class="mb-3">
             <label class="form-label" for="currentPassword">Enter Current Password</label>
-            <input class="form-control" id="currentPassword" name="currentPassword" type="text" minlength="5" maxlength="15"
+            <input class="form-control" id="currentPassword" name="currentPassword" type="password" minlength="5" maxlength="15"
                 pattern="^[a-zA-Z0-9]{5,15}$" placeholder="currentPassword" required />
         </div>
         <!-- New password -->
@@ -37,7 +37,7 @@
         </div>
         <!--confirm button -->
         <div class="d-grid">
-            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirm</button>
+            <a href="{{url_for('changePassword', username=session['user'])}}" class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirm</a>
         </div>
     </form> 
     </div>
