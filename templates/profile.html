@@ -21,7 +21,7 @@
 
   <div class="row ">
     <div class="col-12 changepwd">
-      <form id="changePwdForm" method="POST" action="#">
+      <form id="changePwdForm" method="POST" action="{{url_for('changePassword', username= session['user'])}}">
 
         <!-- current password -->
         <div class="mb-3">
@@ -37,7 +37,7 @@
         </div>
         <!--confirm button -->
         <div class="d-grid">
-            <a href="{{url_for('changePassword', username=session['user'])}}" class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirm</a>
+            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirm</button>
         </div>
     </form> 
     </div>
