@@ -2,18 +2,18 @@
 {% block content %}
 
 <div class="container px-5 my-5">
-     <!-- user's profile -->
+  <!-- user's profile -->
   <div class="row">
     <h3 class="center-align">
       <strong> {{username}}'s Profile</strong>
     </h3>
   </div>
-    <!-- user information -->
+  <!-- user information -->
   <div class="row profile-info">
     <h4> Your Email Address = {{ emailaddress }}</h4>
     <h4> Your Username = {{ username }}</h4>
   </div>
-    <!-- user added stories -->
+  <!-- user added stories -->
   <div class="row">
     <h4 class="profile-info"> Your Stories</h4>
     {% for story in travel_stories %}
@@ -26,8 +26,34 @@
             <h6 class="card-title">{{story.origin_country}}- {{story.destination_country}} </h6>
             <p class="card-text">{{story.date_of_journey}}</p>
             <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>
-            <a href="{{url_for('delete_story', story_id = story._id)}}"
-              class="btn btn-style btn-primary btn-danger ">Delete</a>
+            
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-style btn-danger btn-primary confirm" data-toggle="modal">
+              Delete
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete your Story?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p> Are you sure you want to Delete the Story? </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" id="cancelbutton" class="btn btn-secondary"
+                      data-dismiss="modal">Cancel</button>
+                    <a href="{{url_for('delete_story', story_id = story._id)}}" id="deletebutton" class="btn btn-primary">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="card-body">
@@ -40,35 +66,10 @@
     {% endfor %}
   </div>
 
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </div>
 
-</div>
+
 
 {% endblock %}
