@@ -26,3 +26,12 @@
   $(".confirm").click(function () {
        $('#deleteStory').modal('show');
     });
+
+
+  $(document).ready(function () {
+      $('.changepwd').parent().hide();  
+  });
+  
+  $(".btn-change").click(function () {  
+      $(this).parent().next().slideToggle('slow');  
+  });
