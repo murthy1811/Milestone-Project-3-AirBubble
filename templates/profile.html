@@ -26,30 +26,28 @@
             <h6 class="card-title">{{story.origin_country}}- {{story.destination_country}} </h6>
             <p class="card-text">{{story.date_of_journey}}</p>
             <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>
-            
+
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-style btn-danger btn-primary confirm" data-toggle="modal">
               Delete
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="deleteStory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete your Story?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="modalTitle">Delete your Story?</h5>
                   </div>
                   <div class="modal-body">
                     <p> Are you sure you want to Delete the Story? </p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" id="cancelbutton" class="btn btn-secondary"
-                      data-dismiss="modal">Cancel</button>
-                    <a href="{{url_for('delete_story', story_id = story._id)}}" id="deletebutton" class="btn btn-primary">Delete</a>
+                    <a href="{{url_for('profile', username = username)}}" type="button" id="cancelbutton"
+                      class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                    <a href="{{url_for('delete_story', story_id = story._id)}}" id="deletebutton"
+                      class="btn btn-primary">Delete</a>
                   </div>
                 </div>
               </div>
@@ -66,10 +64,5 @@
     {% endfor %}
   </div>
 
-
-
 </div>
-
-
-
 {% endblock %}

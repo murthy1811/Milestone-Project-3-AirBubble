@@ -24,5 +24,5 @@
 
 
   $(".confirm").click(function () {
-       $('#exampleModal').modal('show');
+       $('#deleteStory').modal('show');
     });
