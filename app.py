@@ -69,7 +69,7 @@ def login():
             {"username" : request.form.get("username").lower()})
 
         if existing_user:
-            #ensure hased password matches user input
+            #ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
@@ -106,11 +106,16 @@ def profile(username):
 @app.route("/changePassword/<username>", methods = ["GET", "POST"])
 def changePassword(username):
     if request.method == "POST":
-        current_password = generate_password_hash(request.form.get("currentPassword"))
+        # grab the current user session
+        current_user= mongo.db.user_profile.find_one({"username" : session["user"]})
         update_password =  generate_password_hash(request.form.get("newPassword"))
-        mongo.db.user_profile.update({"username": session["user"]},{"$set": {"password" : update_password}})
-        flash("Your Password Updated Successfully")
-    return render_template("profile.html", username = username)
+        # check if entered current password and db password match
+        if check_password_hash(current_user["password"], request.form.get("currentPassword")):
+            mongo.db.user_profile.update({"username": session["user"]},{"$set": {"password" : update_password}})
+            flash("Your Password Updated Successfully")
+        else:
+            flash("Your current Password does not match with records")
+        return redirect(url_for('profile', username=session["user"]))
 
 
 @app.route("/logout")
