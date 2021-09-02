@@ -104,18 +104,19 @@
     {% for comment in comments %}
     {% if comment.linked_travel_id == story._id %}
     <div class="row comments">
-        <div class="col-12">
-            <p class="each-comment">{{comment.comment}}</p>
-            <br>
-            <p>{{comment.user}}</p> 
-            <hr>
+        <div class="col-2">
+            <p class="each-comment"> <i class=" far fa-user"></i>  {{comment.commenter}}</p>         
         </div>
+        <div class="col-10">
+            <p class="each-comment">{{comment.comment}}</p>            
+        </div>
+        <hr>
     </div>
     {% endif %}
     {% endfor %}
 
      <!-- comments input section for user to interact -->
-    <div class="row ">
+    <div class="row comments-input ">
         <h4> Leave your comments below </h3>
     </div>
     
@@ -123,7 +124,7 @@
         novalidate>
         <div class="form-row">
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3">                
                 <input class="form-control" id="user" name="user" type="text" minlength="2" maxlength="50"
                     placeholder="Input your Name" required />
                 <label for="commentform">Your Name</label>

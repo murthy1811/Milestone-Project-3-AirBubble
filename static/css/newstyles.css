@@ -10,7 +10,7 @@
     text-align: center;
     padding-top: 50px;
     font-weight: 300;
-    color: cornflowerblue;
+    
 }
 
  /* styling for stories in read more info */
@@ -18,7 +18,6 @@
     padding-bottom: 20px;
     font-weight: 400;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: cornflowerblue;
     font-size: large;
 }
 
@@ -36,8 +35,7 @@
 .profile-info {
     padding-bottom: 50px;
     font-weight: 400;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: cornflowerblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
     padding-top: 50px;
     text-align: left;
@@ -69,9 +67,21 @@
 }
 
 .comments{
-    padding-bottom: 50px;
+    padding-bottom:20px;
+    background-color: rgb(228, 225, 225);
 }
 
 .each-comment{
     height: 15px;
+}
+
+.comments-input{
+    padding-top: 100px;
+}
+
+/* travel story cards styling */
+
+.card{
+    border-radius: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

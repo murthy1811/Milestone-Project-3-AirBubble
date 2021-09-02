@@ -201,7 +201,8 @@ def comments(story_id):
     if request.method == "POST":
         usercomment= {
             "comment" : request.form.get("comment"),
-            "linked_travel_id" :  linked_travelstory
+            "linked_travel_id" :  linked_travelstory,
+            "commenter" : request.form.get("user")
         } 
         mongo.db.user_comments.insert_one(usercomment)
         return redirect(url_for('read_more', story_id = story_id))
