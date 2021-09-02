@@ -1,15 +1,19 @@
+ /* flash messages styling */
 .add_style{
     padding-top: 50px;
     color: rgb(44, 10, 238);
     text-align: center;
 }
 
+ /* text alignment for headings */
 .center-align{
     text-align: center;
     padding-top: 50px;
     font-weight: 300;
+    color: cornflowerblue;
 }
 
+ /* styling for stories in read more info */
 .form-info {
     padding-bottom: 20px;
     font-weight: 400;
@@ -18,16 +22,19 @@
     font-size: large;
 }
 
+ /* styling for buttons in edit, profile pages */
 .btn-style{
     margin: 5px;
 }
 
+ /* navbar styling edited */
 .nav-item{
     padding-left: 10px;
 }
 
+ /* information on read more styling */
 .profile-info {
-    padding-bottom: 20px;
+    padding-bottom: 50px;
     font-weight: 400;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: cornflowerblue;
@@ -36,6 +43,7 @@
     text-align: left;
 }
 
+  /* button on profile for change password */
 .btn-change{
     width: 25%;
     background-color: #0d6efd;
@@ -44,4 +52,26 @@
     text-align: center;
     color: rgb(8, 8, 8);
     margin-bottom: 20px;
+}
+
+@media(max-width:576px) {
+
+.btn-change{
+    width: 60%;
+}
+}
+
+/* comments styling on read more page */
+
+.comments-heading{
+    color: darkblue;
+    padding-top: 25px;
+}
+
+.comments{
+    padding-bottom: 50px;
+}
+
+.each-comment{
+    height: 15px;
 }
