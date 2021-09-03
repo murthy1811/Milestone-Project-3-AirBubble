@@ -75,9 +75,35 @@
     padding-top: 100px;
 }
 
+
+
 /* travel story cards styling */
 
 .card{
     border-radius: 15px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
+ /* styling for textarea box in stories */
+
+ #experience{
+     height: 10rem;
+     padding-top: 31px;
+ }
+
+ @media(max-width:576px) {
+
+    #experience{
+        height: 15rem;
+        padding-top: 90px;
+    }
+    }
+
+@media(max-width:800px) and (min-width:580px) {
+
+        #experience{
+            height: 12rem;
+            padding-top: 55px;
+        }
+        }
