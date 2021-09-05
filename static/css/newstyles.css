@@ -1,4 +1,7 @@
- /* flash messages styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+
+/* flash messages styling */
 .add_style{
     padding-top: 50px;
     color: rgb(44, 10, 238);
@@ -81,7 +84,7 @@
 
 .card{
     border-radius: 15px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-family: 'Montserrat', sans-serif ;
 }
 
 

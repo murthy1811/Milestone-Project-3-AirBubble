@@ -60,7 +60,7 @@ def signup():
 
     return render_template("signup.html")
 
-
+# login functionality
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
