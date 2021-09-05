@@ -16,7 +16,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+#  collects all stories and add to html
 @app.route("/")
 @app.route("/travel_stories")
 def travel_stories():
@@ -24,12 +24,15 @@ def travel_stories():
     return render_template("travel_stories.html", travel_stories = travel_stories)
 
 
+# search the stories and return results from db
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     travel_stories= list(mongo.db.travel_stories.find({"$text": {"$search": query}}))
     return render_template("travel_stories.html", travel_stories = travel_stories)
 
+
+# sign up functionality
 @app.route("/signup", methods = ["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -60,6 +63,8 @@ def signup():
 
     return render_template("signup.html")
 
+
+
 # login functionality
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -89,7 +94,7 @@ def login():
     return render_template("login.html")
 
 
-
+# logged user profile display
 @app.route("/profile/<username>", methods = ["GET", "POST"])
 def profile(username):
     #grab the sesssion user's username from db
@@ -103,6 +108,7 @@ def profile(username):
     return redirect(url_for('login'))
 
 
+# change password functionality
 @app.route("/changePassword/<username>", methods = ["GET", "POST"])
 def changePassword(username):
     if request.method == "POST":
@@ -118,6 +124,7 @@ def changePassword(username):
         return redirect(url_for('profile', username=session["user"]))
 
 
+# logout functionality for session user
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -126,6 +133,7 @@ def logout():
     return redirect(url_for('login'))
 
 
+# adding travel story by session user
 @app.route("/add_story", methods = ["GET", "POST"])
 def add_story():
     if request.method == "POST":
@@ -153,6 +161,7 @@ def add_story():
     return render_template("add_story.html", category = category)
 
 
+# readmore page for each travel story
 @app.route("/read_more/<story_id>", methods = ["GET", "POST"])
 def read_more(story_id):
     travel_stories= list(mongo.db.travel_stories.find({"_id": ObjectId(story_id)}))
@@ -160,6 +169,7 @@ def read_more(story_id):
     return render_template("read_more.html",travel_stories = travel_stories, comments = comments)
 
 
+# edit travel story by session user
 @app.route("/edit_story/<story_id>", methods=["GET", "POST"])
 def edit_story(story_id):
     if request.method == "POST":
@@ -187,6 +197,7 @@ def edit_story(story_id):
     return render_template("edit_story.html", story=story, category = category)
 
 
+# delete story functionality by session user
 @app.route("/delete_story/<story_id>")
 def delete_story(story_id):
     mongo.db.travel_stories.remove({"_id":ObjectId(story_id)})
@@ -195,6 +206,7 @@ def delete_story(story_id):
     return redirect(url_for('profile', username=session["user"]))
 
 
+# comments functionality
 @app.route("/comments/<story_id>" , methods = ["GET", "POST"])
 def comments(story_id):
     linked_travelstory = ObjectId(story_id)
