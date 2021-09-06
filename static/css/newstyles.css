@@ -11,9 +11,10 @@
  /* text alignment for headings */
 .center-align{
     text-align: center;
-    padding-top: 50px;
-    font-weight: 300;
-    
+    padding-top: 10px;
+    font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
+        
 }
 
  /* styling for stories in read more info */
@@ -29,6 +30,7 @@
     margin: 5px;
 }
 
+
  /* navbar styling edited */
 .nav-item{
     padding-left: 10px;
@@ -37,11 +39,11 @@
  /* information on read more styling */
 .profile-info {
     padding-bottom: 50px;
-    font-weight: 400;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: large;
+    font-family: 'Quicksand', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
     padding-top: 50px;
     text-align: left;
+   
 }
 
   /* button on profile for change password */
@@ -51,7 +53,7 @@
     height: 50px;
     padding: 0px 0px;
     text-align: center;
-    color: rgb(8, 8, 8);
+    color:white;
     margin-bottom: 20px;
 }
 
@@ -110,3 +112,16 @@
             padding-top: 55px;
         }
         }
+
+.form-control, .form-floating{
+    font-family: 'Quicksand', sans-serif;
+}
+
+#submitButton{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn-font{
+    font-family: 'Quicksand', sans-serif;
+}
+

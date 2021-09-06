@@ -9,9 +9,10 @@
     </h3>
   </div>
   <!-- user information -->
-  <div class="row profile-info">
-    <h4> Your Email Address = {{ emailaddress }}</h4>
-    <h4> Your Username = {{ username }}</h4>
+  <div class="row profile-info">    
+      <p><strong>Email Address </strong> : {{ emailaddress }}</p>
+      <p><strong>Username </strong> : {{ username }}</p>   
+    
   </div>
 
   <!-- change password -->
@@ -45,7 +46,7 @@
 
   <!-- user added stories -->
   <div class="row profile-info">
-    <h4 > Your Stories</h4>
+    <h5> Your Stories</h5>
     {% for story in travel_stories %}
     {% if session.user|lower == story.added_by|lower %}
     <div class="col-12 col-sm-6 col-lg-4">
