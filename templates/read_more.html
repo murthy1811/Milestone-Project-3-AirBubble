@@ -102,17 +102,13 @@
     </div>
     <hr>
     {% for comment in comments %}
-    {% if comment.linked_travel_id == story._id %}
+    
     <div class="row comments">
-        <div class="col-12 col-sm-2">
-            <p class="each-comment"> <i class=" far fa-user"></i>  {{comment.commenter}}</p>         
+         <div class="col-12 ">
+            <p class="each-comment"> <i class=" far fa-user"></i> <strong>{{comment.commenter}} </strong>:  {{comment.comment}}</p> 
         </div>
-        <div class="col-10">
-            <p class="each-comment">{{comment.comment}}</p>            
-        </div>
-        <hr>
-    </div>
-    {% endif %}
+        <br>
+    </div>    
     {% endfor %}
 
      <!-- comments input section for user to interact -->

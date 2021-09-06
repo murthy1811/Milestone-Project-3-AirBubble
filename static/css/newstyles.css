@@ -21,7 +21,7 @@
 .form-info {
     padding-bottom: 20px;
     font-weight: 400;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: large;
 }
 
@@ -69,17 +69,28 @@
 .comments-heading{
     color: darkblue;
     padding-top: 25px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .comments{
-    padding-bottom:20px;
-    background-color: rgb(228, 225, 225);
+    padding-bottom:20px;  
+    font-family: 'Cormorant Garamond', sans-serif; 
+    font-weight: 400;
 }
 
 .comments-input{
     padding-top: 100px;
+    font-family: 'Quicksand', sans-serif;
 }
 
+.each-comment{
+    background-color: whitesmoke;
+    border-radius: 15px;
+    height: auto;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 
 /* travel story cards styling */
@@ -113,11 +124,12 @@
         }
         }
 
+ /* font changes across the forms */
 .form-control, .form-floating{
     font-family: 'Quicksand', sans-serif;
 }
 
-#submitButton{
+#submitButton, #sendButton{
     font-family: 'Quicksand', sans-serif;
 }
 

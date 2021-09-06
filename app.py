@@ -165,7 +165,7 @@ def add_story():
 @app.route("/read_more/<story_id>", methods = ["GET", "POST"])
 def read_more(story_id):
     travel_stories= list(mongo.db.travel_stories.find({"_id": ObjectId(story_id)}))
-    comments = list(mongo.db.user_comments.find())
+    comments = list(mongo.db.user_comments.find({"linked_travel_id": ObjectId(story_id)})) 
     return render_template("read_more.html",travel_stories = travel_stories, comments = comments)
 
 
