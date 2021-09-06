@@ -32,7 +32,7 @@
   $(document).ready(function () {
       $('.changepwd').parent().hide();  
   });
-  
+  // toggle functionality for change password button
   $(".btn-change").click(function () {  
       $(this).parent().next().slideToggle('slow');  
   });
