@@ -197,15 +197,6 @@ def edit_story(story_id):
     return render_template("edit_story.html", story=story, category = category)
 
 
-# delete story functionality by session user
-@app.route("/delete_story/<story_id>")
-def delete_story(story_id):
-    mongo.db.travel_stories.remove({"_id":ObjectId(story_id)})
-    mongo.db.user_comments.remove({"linked_travel_id" : ObjectId(story_id)})
-    flash("Your Travel Story is successfully deleted")
-    return redirect(url_for('profile', username=session["user"]))
-
-
 # comments functionality
 @app.route("/comments/<story_id>" , methods = ["GET", "POST"])
 def comments(story_id):
@@ -219,7 +210,23 @@ def comments(story_id):
         mongo.db.user_comments.insert_one(usercomment)
         return redirect(url_for('read_more', story_id = story_id))
 
-    
+
+# delete comments functionality by session user
+@app.route("/delete_comment/<comment_id>,<story_id>")
+def delete_comment(comment_id, story_id):
+    mongo.db.user_comments.remove({"_id":ObjectId(comment_id)})    
+    flash("Comment is successfully deleted")
+    return redirect(url_for('read_more', story_id = story_id))
+
+
+# delete story functionality by session user
+@app.route("/delete_story/<story_id>")
+def delete_story(story_id):
+    mongo.db.travel_stories.remove({"_id":ObjectId(story_id)})
+    mongo.db.user_comments.remove({"linked_travel_id" : ObjectId(story_id)})
+    flash("Your Travel Story is successfully deleted")
+    return redirect(url_for('profile', username=session["user"]))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
