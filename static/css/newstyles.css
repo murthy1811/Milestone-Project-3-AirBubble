@@ -68,7 +68,13 @@
 
 @media(max-width:576px) {
 	.btn-change {
-		width: 60%;
+		width: 75%;
+	}
+}
+
+@media(max-width:800px) and (min-width:580px) {
+	.btn-change {
+		width: 45%;
 	}
 }
 
