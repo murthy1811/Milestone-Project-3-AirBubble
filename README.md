@@ -11,6 +11,7 @@
 1. [**Overview**](#overview)
 2. [**User Experience**](#user-experience)
     - [**User Stories**](#user-stories)
+    - [**Database diagram**](#database-diagram)
     - [**Wireframes**](#wireframes)
     - [**Design**](#design)
 3. [**Features**](#features)
@@ -83,20 +84,44 @@ Player goals
     4. To be able to login, edit and delete my stories, or change my password for my profile
  
 
+- ### Database diagram
+
+  - [Database Diagram](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/database_diagram.jpg).
+  
+
 - ### Wireframes
 
   The wireframes for this project were created using figma.
-    ****   should be updated with wire frame images ****
-  - [Homepage](https://github.com/Johnny-Morgan/memory-blocks/blob/master/assets/docs/wireframes_homepage.pdf).
+    
+  - [Desktop Home](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/desktop_home.jpg).
 
-  - [Gamepage](https://github.com/Johnny-Morgan/memory-blocks/blob/master/assets/docs/wireframes_gamepage.pdf).
+  - [Tablet Home](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/tablet_home.jpg)
 
-  - [Instructions Modal](https://github.com/Johnny-Morgan/memory-blocks/blob/master/assets/docs/wireframes_instructions_modal.pdf).
+  - [Mobile Home](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/mobile_home.jpg)
 
-  - [Contact Form Modal](https://github.com/Johnny-Morgan/memory-blocks/blob/master/assets/docs/wireframes_contact_form_modal.pdf).
+  - [Desktop Login or Signup](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/desktop_login_signup.jpg).
 
-  ****   should be updated with wire frame images ****
+  - [Mobile Login or Signup](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/tablet_login_signup.jpg)
 
+  - [Mobile Login or Signup](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/mobile_login-signup.jpg)
+
+  - [Desktop New or Edit Story](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/desktop_newstory_editstory.jpg).
+
+  - [Tablet New or Edit Story](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/tablet_newstory_editstory.jpg)
+
+  - [Mobile New or Edit Story](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/mobile_newstory_editstory.jpg)
+
+  - [Desktop Profile](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/desktop_profile.jpg).
+
+  - [Tablet Profile](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/tablet_profile.jpg)
+
+  - [Mobile Profile](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/mobile_profile.jpg)
+
+  - [Desktop Readmore](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/desktop_readmore.jpg).
+
+  - [Tablet Readnore](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/tablet_readmore.jpg)
+
+  - [Mobile Readmore](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/static/assets/wireframes/mobile_readmore.jpg)
 
 
 - ### Design
