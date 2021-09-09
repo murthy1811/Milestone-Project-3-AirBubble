@@ -100,7 +100,7 @@ def login():
 def profile(username):
     # grab the sesssion user's username from db
     username = mongo.db.user_profile.find_one(
-        {"username": session["user"]})["username"]   
+        {"username": session["user"]})["username"]
     emailaddress = mongo.db.user_profile.find_one(
         {"username": session["user"]})["emailaddress"]
     travel_stories = list(mongo.db.travel_stories.find())
@@ -122,7 +122,7 @@ def changePassword(username):
         update_password = generate_password_hash(
             request.form.get("newPassword"))
         # check if entered current password and db password match
-        if check_password_hash(current_user["password"], 
+        if check_password_hash(current_user["password"],
                                request.form.get("currentPassword")):
             mongo.db.user_profile.update(
                 {"username": session["user"]},
@@ -160,8 +160,8 @@ def add_story():
             "kids_under_6": request.form.get("kidsUnder6"),
             "covid_report": request.form.getlist("covidReport"),
             "your_experience": request.form.get("experience"),
-            "added_by": session["user"]           
-        }
+            "added_by": session["user"]
+            }
         mongo.db.travel_stories.insert_one(travelstory)
         flash("Your Travel Story is added successfully")
         return redirect(url_for("travel_stories"))
@@ -176,9 +176,9 @@ def read_more(story_id):
     travel_stories = list(mongo.db.travel_stories.find(
         {"_id": ObjectId(story_id)}))
     comments = list(mongo.db.user_comments.find(
-        {"linked_travel_id": ObjectId(story_id)})) 
+        {"linked_travel_id": ObjectId(story_id)}))
     return render_template(
-        "read_more.html", travel_stories=travel_stories, comments=comments)
+            "read_more.html", travel_stories=travel_stories, comments=comments)
 
 
 # edit travel story by session user
@@ -199,13 +199,12 @@ def edit_story(story_id):
             "kids_under_6": request.form.get("kidsUnder6"),
             "covid_report": request.form.getlist("covidReport"),
             "your_experience": request.form.get("experience"),
-            "added_by": session["user"]           
-        }
+            "added_by": session["user"]
+            }
         mongo.db.travel_stories.update(
             {"_id": ObjectId(story_id)}, submitstory)
         flash("Your Travel Story is updated successfully")
-        
-    story = mongo.db.travel_stories.find_one({"_id": ObjectId(story_id)})
+        story = mongo.db.travel_stories.find_one({"_id": ObjectId(story_id)})
     category = mongo.db.category.find().sort("category_name", -1)
     return render_template("edit_story.html", story=story, category=category)
 
@@ -219,7 +218,7 @@ def comments(story_id):
             "comment": request.form.get("comment"),
             "linked_travel_id":  linked_travelstory,
             "commenter": request.form.get("user")
-        } 
+        }
         mongo.db.user_comments.insert_one(usercomment)
         return redirect(url_for('read_more', story_id=story_id))
 
@@ -227,7 +226,7 @@ def comments(story_id):
 # delete comments functionality by session user
 @app.route("/delete_comment/<comment_id>,<story_id>")
 def delete_comment(comment_id, story_id):
-    mongo.db.user_comments.remove({"_id": ObjectId(comment_id)})    
+    mongo.db.user_comments.remove({"_id": ObjectId(comment_id)})
     flash("Comment is successfully deleted")
     return redirect(url_for('read_more', story_id=story_id))
 
