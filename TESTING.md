@@ -176,3 +176,54 @@ ___
 
   Returns flash message "Username already existing".
   ![Username exists](static/assets/img/username_existing.jpg)
+
+* **Registration attempt with an wrong email format**
+
+  prompts user to use the right format
+  ![Email format wrong](static/assets/img/wrong_email.jpg)
+
+* **Login attempt with an wrong username or password**
+
+  Returns flash message "Incorrect username and/or password".
+  ![Wrong entries](static/assets/img/wrong_details.jpg)
+
+* **Add Story form validation**
+
+  Prompts user to fill in mandatory fields.
+  ![Form validation](static/assets/img/add_story_validation.jpg)
+
+* **Current password mismatch while changing password**
+
+  Returns flash message "Your current password does not match with our records".
+  ![Current password mismatch](static/assets/img/current_password_mismatch.jpg)
+
+* **Confirmation before deleting the story**
+
+  Modal popup to let user confirm the deletion.
+  ![Confirm Deletion](static/assets/img/delete_modal.jpg)
+
+**[back to top](#testing)**
+
+### Responsiveness
+
+The responsiveness of the website was tested on all popular devices, including iPhone 5/SE Android Pixel 2, Samgung Galaxy S5, iPhone 6/7/8, iPad, iPad Pro, etc using [Responsinator](https://www.responsinator.com/), and Google Dev Tools Device Mode. Travel stories display on medium screens are adjusted after this test.
+
+It was tested on physical devices including iPhone XR and iPad. All tests have shown that site is fully responsive and fits and adapts well to the different viewport size devices.
+
+### Usability Testing
+
+This website was tested for usability by my family and friends. Overlapping of test in forms is identified through this process on small screens and fixed later.
+Later, They didn't experience any issues during the testing process and it was confirmed that the website was easy to use and navigate. They were able to intuitively use the interactive elements of the website, find the information they were looking for and easily understand the purpose of the website.
+
+
+### Performance Testing
+
+Performance testing was carried out using Lighthouse in Chrome Developer Tools. The tests had shown good performance and excellent accessibility and best practice results for desktop devices. 
+Steps taken to improve performance for the mobile devices following the initial tests:
+* Added <meta description> to the site to improve best practices
+
+### Browser Compatibility Testing
+
+Website is checked on different browsers, including Chrome, Safari, Firefox and Edge
+
+**[back to top](#testing)**
