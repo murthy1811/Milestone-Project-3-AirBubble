@@ -11,7 +11,7 @@
         <!-- category name -->
         <div class="form-floating mb-3">
             <select class="form-select" id="category_name" name="category_name" aria-label="category" required>
-                <option value=""></option>
+                <option value="">Select any</option>
                 {% for option in category %}
                 <option value="{{option.category_name}}">{{option.category_name}}</option>
                 {% endfor %}
@@ -97,7 +97,7 @@
             <!-- Covid report-->
             <div class="form-floating mb-3">
                 <select class="form-select" id="covidReport" name="covidReport" aria-label="COVID report" required>
-                    <option value=""></option>
+                    <option value="">Select any</option>
                     <option value="Negative RT PCR needed">Negative RT PCR needed</option>
                     <option value="No test report for fully Vaccinated">No test report for
                         fully Vaccinated</option>

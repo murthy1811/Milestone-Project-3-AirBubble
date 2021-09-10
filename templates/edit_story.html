@@ -7,12 +7,13 @@
 
 <!-- form html from start bootstrap -->
 <div class="container px-5 my-5">
+
     <form class="needs-validation" id="contactForm" method="POST"
         action="{{url_for('edit_story', story_id = story._id)}}" novalidate>
         <!-- category name -->
         <div class="form-floating mb-3">
             <select class="form-select" id="category_name" name="category_name" aria-label="category" required>
-                <option value="" disabled></option>
+                <option value="" disabled>Select any</option>
                 {% for option in category %}
                 {% if option.category_name == story.category_name %}
                 <option value="{{option.category_name}}" selected>{{option.category_name}}</option>
@@ -109,7 +110,7 @@
             <div class="form-floating mb-3">
 
                 <select class="form-select" id="covidReport" name="covidReport" aria-label="COVID report" required>
-                    <option value=""></option>
+                    <option value="">Select any</option>
                     <option value="Negative RT PCR needed">Negative RT PCR needed</option>
                     <option value="No test report for fully Vaccinated">No test report for
                         fully Vaccinated</option>
@@ -121,8 +122,9 @@
             <!-- experience textbox -->
             <div class="form-floating mb-3">
                 <textarea class="form-control" id="experience" name="experience" type="text" placeholder="Please share your experience like Quarantine rules, documents needed, rules in transit,
-                     rules related to kids etc"  required />{{story.your_experience}}</textarea>
-                <label for="experience" >Please share your experience like Quarantine rules,documents needed, rules in transit, rules related to kids etc</label>
+                     rules related to kids etc" required />{{story.your_experience}}</textarea>
+                <label for="experience">Please share your experience like Quarantine rules,documents needed, rules in
+                    transit, rules related to kids etc</label>
                 <div class="invalid-feedback">Please share your experience like Quarantine rules,
                     documents needed, rules in transit,rules related to kids etc is required.</div>
             </div>
@@ -131,7 +133,8 @@
 
         <div class="d-grid">
             <!-- cancel button -->
-            <a href="{{url_for('travel_stories')}}" class="btn btn-danger btn-font btn-style btn-lg btn-primary">Cancel</a>
+            <a href="{{url_for('travel_stories')}}"
+                class="btn btn-danger btn-font btn-style btn-lg btn-primary">Cancel</a>
             <!-- edit button -->
             <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Edit my Story</button>
         </div>

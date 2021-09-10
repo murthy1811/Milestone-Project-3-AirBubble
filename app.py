@@ -170,17 +170,6 @@ def add_story():
     return render_template("add_story.html", category=category)
 
 
-# readmore page for each travel story
-@app.route("/read_more/<story_id>", methods=["GET", "POST"])
-def read_more(story_id):
-    travel_stories = list(mongo.db.travel_stories.find(
-        {"_id": ObjectId(story_id)}))
-    comments = list(mongo.db.user_comments.find(
-        {"linked_travel_id": ObjectId(story_id)}))
-    return render_template(
-            "read_more.html", travel_stories=travel_stories, comments=comments)
-
-
 # edit travel story by session user
 @app.route("/edit_story/<story_id>", methods=["GET", "POST"])
 def edit_story(story_id):
@@ -204,9 +193,22 @@ def edit_story(story_id):
         mongo.db.travel_stories.update(
             {"_id": ObjectId(story_id)}, submitstory)
         flash("Your Travel Story is updated successfully")
-        story = mongo.db.travel_stories.find_one({"_id": ObjectId(story_id)})
+    story = mongo.db.travel_stories.find_one({"_id": ObjectId(story_id)})
     category = mongo.db.category.find().sort("category_name", -1)
     return render_template("edit_story.html", story=story, category=category)
+
+
+# readmore page for each travel story
+@app.route("/read_more/<story_id>", methods=["GET", "POST"])
+def read_more(story_id):
+    travel_stories = list(mongo.db.travel_stories.find(
+        {"_id": ObjectId(story_id)}))
+    comments = list(mongo.db.user_comments.find(
+        {"linked_travel_id": ObjectId(story_id)}))
+    return render_template(
+            "read_more.html", travel_stories=travel_stories, comments=comments)
+
+
 
 
 # comments functionality
