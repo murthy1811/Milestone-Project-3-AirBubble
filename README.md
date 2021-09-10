@@ -11,6 +11,7 @@
 1. [**Overview**](#overview)
 2. [**User Experience**](#user-experience)
     - [**User Stories**](#user-stories)
+    - [**Site owner Stories**](#site-owner-stories)
     - [**Database diagram**](#database-diagram)
     - [**Wireframes**](#wireframes)
     - [**Design**](#design)
@@ -50,7 +51,7 @@ Business Goals
 
     - Extremely helpful user database to all the air travellers across the world. User database can be put into more use in future.
 
-Player goals
+User goals
 
   - A one stop website for all the information an air traveller need during this COVID times.
 
@@ -70,19 +71,36 @@ Player goals
     - User easily register, and share their own travel story with the community. User can login, logout and edit, delete their own stories
       user can change their password to their profile
 
-![Image](assets/images/mockup.png)
+
 
 ## User Experience
 
 - ### User Stories
 
-    As an user and Air traveller, I want:
+    As a guest user of Air Bubble website for the first time, I want:
+    
+    1. To understand easily what the site is all about
+    2. To search for information related to the recent travels happened to the destination I want to travel.
+    3. To be able to ask more questions related to a particular user travel story without signing up.
+    4. To be able to easily access all available website features from different screen size devices
+    5. To be able to sign up easily for the website
  
-    1. To check information related to the recent travels happened to the destination I want to travel.
-    2. To be able to ask more questions related to a particular user travel story with or with out Login.
-    3. To be able to register, and share my own travel story with the community.
-    4. To be able to login, edit and delete my stories, or change my password for my profile
- 
+
+    As a regsitered user of Air Bubble website, I want:
+
+    1. To be able to login to the site using my username and password.
+    2. To be able to add my travel experience to contribute to the community
+    3. To be able to see all my added stories on my profile and can edit or delete them
+    4. To be able to confirm the deletion before I delete my added travel story
+    5. To be able to change my password in the profile
+
+
+- ### Site owner stories
+
+    As an admin/ site owner of Air Bubble website, I want:
+
+    1. To be able to delete stories and comments contributed by registered/guest users if necessary.
+    
 
 - ### Database diagram
 
@@ -184,6 +202,9 @@ The following are elements that could be added to the website in future developm
 - A forgot password option where,on clicking asks user to input their email and a password change link can be sent to their email
 
 - A online chat window where all registered users can interact live.
+
+- Admin user is not given confirmation before deletion option due to time constrain, and also with intent that admin will have due diligence before
+  deleting a story
 
 
 ## Technologies Used
