@@ -92,10 +92,33 @@
       <!-- edit and delete buttons for the user in session -->
     {% if session.user|lower == story.added_by|lower %}
     <a href="{{url_for('edit_story', story_id = story._id)}}" class="btn btn-style btn-primary">Edit</a>    
-    <a href="{{url_for('delete_story', story_id = story._id)}}" class="btn btn-style btn-primary btn-danger ">Delete</a>
+    <button type="button" class="btn btn-style btn-danger btn-primary confirm" data-toggle="modal">
+        Delete
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="deleteStory" tabindex="-1" role="dialog" aria-labelledby="modalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitle">Delete your Story?</h5>
+            </div>
+            <div class="modal-body">
+              <p> Are you sure you want to Delete the Story? </p>
+            </div>
+            <div class="modal-footer">
+              <a href="{{url_for('read_more', story_id = story._id)}}" id="cancelbutton"
+                class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+              <a href="{{url_for('delete_story', story_id = story._id)}}" id="deletebutton"
+                class="btn btn-primary">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
     {% elif session.user|lower == "admin"|lower  and session.user|lower != story.added_by|lower  %}
     <a href="{{url_for('delete_story', story_id = story._id)}}" class="btn btn-style btn-primary btn-danger ">Delete</a>
-    
+
     {% endif %}
 
       <!-- comments display which are made by user -->
@@ -126,7 +149,7 @@
 
      <!-- comments input section for user to interact -->
     <div class="row comments-input ">
-        <h4> Leave your comments below </h3>
+        <h4> Leave your comments below </h4>
     </div>
     
     <form class="needs-validation" id="commentform" method="POST" action="{{url_for('comments', story_id = story._id)}}"
@@ -136,7 +159,7 @@
             <div class="form-floating mb-3">                
                 <input class="form-control" id="user" name="user" type="text" minlength="2" maxlength="50"
                     placeholder="Input your Name" required />
-                <label for="commentform">Your Name</label>
+                <label for="user">Your Name</label>
                 <div class="invalid-feedback">
                     Text is required.
                 </div>
@@ -145,7 +168,7 @@
             <div class="form-floating mb-3">
                 <input class="form-control" id="comment" name="comment" type="text" minlength="2" maxlength="300"
                     placeholder="Make a Comment" required />
-                <label for="commentform">Your comment</label>
+                <label for="comment">Your comment</label>
                 <div class="invalid-feedback">
                     Text is required.
                 </div>
@@ -154,6 +177,7 @@
             <div class="d-grid">
                 <button class="btn btn-primary btn-lg" id="sendButton" type="submit">Send</button>
             </div>
+        </div>
     </form>
 
     {% endfor %}

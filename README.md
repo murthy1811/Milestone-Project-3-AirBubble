@@ -281,7 +281,16 @@ The following are elements that could be added to the website in future developm
 
 ## Testing
 
-The testing data for this project can be found in a separate file called [TESTING.md](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/TESTING.md).
+The testing data for this project can be found in a separate file called [here](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/TESTING.md).
+
+### Issues and Solutions
+* travel story cards on small screens overlapped due to no media queries intially. CSS is fixed later
+* No defensive deletion confirmation added for admin user due to lack of time, but also intended admin user uses due diligence before deleting 
+* While Code validations, found defensive deletion missing for session user in read more page. Fixed later by adding modal
+* Form input for origin_country is not taking spaces intially but later fixed by adjusting pattern attribute
+* While python code is checked for PEP8 requirements, indentation went wrong and edit-story page did not functioned. Indentation fixed later.
+* Edit story page cancel button takes you to home page instead of profile page. Fixed by adjusting the jinja code url.
+* Logged user can delete their comments and feature is not added due to time constraint. Only Admin can delete the comments
 
 ## Deployment
 

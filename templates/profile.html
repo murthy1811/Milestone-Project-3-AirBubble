@@ -64,7 +64,7 @@
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="deleteStory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="deleteStory" tabindex="-1" role="dialog" aria-labelledby="modalTitle"
               aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -75,7 +75,7 @@
                     <p> Are you sure you want to Delete the Story? </p>
                   </div>
                   <div class="modal-footer">
-                    <a href="{{url_for('profile', username = username)}}" type="button" id="cancelbutton"
+                    <a href="{{url_for('profile', username = username)}}" id="cancelbutton"
                       class="btn btn-secondary" data-dismiss="modal">Cancel</a>
                     <a href="{{url_for('delete_story', story_id = story._id)}}" id="deletebutton"
                       class="btn btn-primary">Delete</a>

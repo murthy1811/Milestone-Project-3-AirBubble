@@ -88,7 +88,7 @@
             </div>
             <!--No of adults -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="noOfAdults" name="noOfAdults" type="number" pattern="^[0-9]{1,20}$"
+                <input class="form-control" id="noOfAdults" name="noOfAdults" type="number"
                     placeholder="No of Adults" value="{{story.no_of_adults}}" required />
                 <label for="noOfAdults">No of Adults</label>
                 <div class="invalid-feedback">
@@ -121,8 +121,8 @@
             </div>
             <!-- experience textbox -->
             <div class="form-floating mb-3">
-                <textarea class="form-control" id="experience" name="experience" type="text" placeholder="Please share your experience like Quarantine rules, documents needed, rules in transit,
-                     rules related to kids etc" required />{{story.your_experience}}</textarea>
+                <textarea class="form-control" id="experience" name="experience" placeholder="Please share your experience like Quarantine rules, documents needed, rules in transit,
+                     rules related to kids etc" required >{{story.your_experience}}</textarea>
                 <label for="experience">Please share your experience like Quarantine rules,documents needed, rules in
                     transit, rules related to kids etc</label>
                 <div class="invalid-feedback">Please share your experience like Quarantine rules,
@@ -133,7 +133,7 @@
 
         <div class="d-grid">
             <!-- cancel button -->
-            <a href="{{url_for('travel_stories')}}"
+            <a href="{{url_for('profile', username = session['user'])}}"
                 class="btn btn-danger btn-font btn-style btn-lg btn-primary">Cancel</a>
             <!-- edit button -->
             <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Edit my Story</button>

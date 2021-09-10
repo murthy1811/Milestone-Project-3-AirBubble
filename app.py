@@ -209,8 +209,6 @@ def read_more(story_id):
             "read_more.html", travel_stories=travel_stories, comments=comments)
 
 
-
-
 # comments functionality
 @app.route("/comments/<story_id>", methods=["GET", "POST"])
 def comments(story_id):
