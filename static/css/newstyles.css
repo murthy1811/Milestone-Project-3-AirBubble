@@ -113,7 +113,9 @@
 .card {
 	border-radius: 15px;
 	font-family: 'Quicksand', sans-serif;
+	width: auto;
 }
+
 
 
 /* styling for textarea box in stories */
