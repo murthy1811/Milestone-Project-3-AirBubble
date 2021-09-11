@@ -9,10 +9,10 @@
     </h3>
   </div>
   <!-- user information -->
-  <div class="row profile-info">    
-      <p><strong>Email Address </strong> : {{ emailaddress }}</p>
-      <p><strong>Username </strong> : {{ username }}</p>   
-    
+  <div class="row profile-info">
+    <p><strong>Email Address </strong> : {{ emailaddress }}</p>
+    <p><strong>Username </strong> : {{ username }}</p>
+
   </div>
 
   <!-- change password -->
@@ -26,21 +26,21 @@
 
         <!-- current password -->
         <div class="mb-3">
-            <label class="form-label" for="currentPassword">Enter Current Password</label>
-            <input class="form-control" id="currentPassword" name="currentPassword" type="password" minlength="5" maxlength="15"
-                pattern="^[a-zA-Z0-9]{5,15}$" placeholder="currentPassword" required />
+          <label class="form-label" for="currentPassword">Enter Current Password</label>
+          <input class="form-control" id="currentPassword" name="currentPassword" type="password" minlength="5"
+            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="currentPassword" required />
         </div>
         <!-- New password -->
         <div class="mb-3">
-            <label class="form-label" for="newPassword">Enter New Password</label>
-            <input class="form-control" id="newPassword" name="newPassword" type="password" minlength="5" maxlength="15"
-                pattern="^[a-zA-Z0-9]{5,15}$" placeholder="newPassword" required />
+          <label class="form-label" for="newPassword">Enter New Password</label>
+          <input class="form-control" id="newPassword" name="newPassword" type="password" minlength="5" maxlength="15"
+            pattern="^[a-zA-Z0-9]{5,15}$" placeholder="newPassword" required />
         </div>
         <!--confirm button -->
         <div class="d-grid">
-            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirm</button>
+          <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirm</button>
         </div>
-    </form> 
+      </form>
     </div>
   </div>
 
@@ -75,8 +75,8 @@
                     <p> Are you sure you want to Delete the Story? </p>
                   </div>
                   <div class="modal-footer">
-                    <a href="{{url_for('profile', username = username)}}" id="cancelbutton"
-                      class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                    <a href="{{url_for('profile', username = username)}}" id="cancelbutton" class="btn btn-secondary"
+                      data-dismiss="modal">Cancel</a>
                     <a href="{{url_for('delete_story', story_id = story._id)}}" id="deletebutton"
                       class="btn btn-primary">Delete</a>
                   </div>

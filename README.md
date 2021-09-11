@@ -3,7 +3,7 @@
     <h2>
         Air Bubble website is a travel story sharing portal for assisting the air travellers during this covid times
     </h2>
-    <h3><a href="https://github.com/murthy1811/Milestone-Project-3-AirBubble" target="_blank">Click here</a> to view the site on GitHub pages.</h3>
+    <h3><a href="http://air-bubble-milestone3.herokuapp.com/travel_stories" target="_blank">Click here</a> to view the live website.</h3>
 </div>
 
 ## Table of Contents

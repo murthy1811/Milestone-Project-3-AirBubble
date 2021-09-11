@@ -138,7 +138,7 @@ ___
 * Flash message is displayed upon successful entry of the story
 * Home page is checked if the added story is being displayed with a read more button
 
-  Edit post
+ Edit post
 
 * Edit post button from Navbar is tested to see if the user is taken to Profile page for editing their stories
 * Edit button is tested and information is changed and submitted to check if the information is updated. Functioning as intended
