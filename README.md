@@ -53,14 +53,14 @@ Business Goals
 
 User goals
 
-  - A one stop website for all the information an air traveller need during this COVID times.
+  - A one stop website for all the information, an air traveller need during this COVID times.
 
-    - Stories added by the users provide the information needed and measures to be taken to travel to a certain destination. There by helping an 
+    - Stories added by the users provide the information needed and measures to be taken to travel to a certain destination, there by helping an 
        anxious traveller 
 
   - An easy to search information website
 
-    - Search bar straight on the Home page will provide results based on the user input like country name, airport code and other keywords.
+    - Search bar, provided directly on the Home page will provide results based on the user input like country name, airport code and other keywords.
 
   - Easy to ask the questions or make comments related to each travel story
 
@@ -68,8 +68,8 @@ User goals
 
   - Easy to share the User own story with the community
 
-    - User easily register, and share their own travel story with the community. User can login, logout and edit, delete their own stories
-      user can change their password to their profile
+    - User can easily register, and share their own travel story with the community. User can login, logout and edit, delete their own stories.
+      User can change their password to their profile
 
 
 
@@ -146,11 +146,12 @@ User goals
 
   - #### Colour Scheme
 
-    I used the bootstrap theme 'Landing Page' from startbootstrap.com . Color theme has not been changed much from the template. 
+    I used the bootstrap theme 'Landing Page' from startbootstrap.com . Color theme has not been changed from the template, as blue, white, black
+    suits very much to the theme Air travel
 
   - #### Typography
 
-    Fonts were also carried on from the template with a minor change of using basic fonts 'Lucida Sans' 'Franklin Gothic medium' for the travel story cards
+    Fonts were also carried on from the template with an addition of  using fonts 'Quicksand' for the travel story cards
 
   - #### Imagery
 
@@ -225,43 +226,43 @@ The following are elements that could be added to the website in future developm
 
     - [Startbootstrap](https://startbootstrap.com/)
 
-    - Startbootstrap is used to select the theme 'Landing page' for the website and form html code is generated using the same.
+       Startbootstrap is used to select the theme 'Landing page' for the website and form html code is generated using the same.
 
     - [jQuery](https://jquery.com/)
 
-    - jQuery is used to simplify the JavaScript code and DOM manipulation. 
+       jQuery is used to simplify the JavaScript code and DOM manipulation. 
 
     - [Bootstrap 4.5](https://getbootstrap.com/)
 
-    - Bootstrap is used to assist with the responsiveness and styling of the website.
+       Bootstrap is used to assist with the responsiveness and styling of the website.
 
     - [GitPod](https://gitpod.io)
 
-    - GitPod was used as the IDE for this project.
+       GitPod was used as the IDE for this project.
 
     - [Git](https://git-scm.com/)
 
-    - Git is used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+      Git is used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
     - [GitHub](https://github.com/)
 
-    - GitHub is used to store the project's code after being pushed from Git.
+      GitHub is used to store the project's code after being pushed from Git.
 
     - [Figma](https://www.figma.com/wireframe-tool/)
 
-    - Figma is used to create the wireframes during the design process.
+      Figma is used to create the wireframes during the design process.
 
     - [Font Awesome](https://fontawesome.com/)
 
-    - Font Awesome is used to obtain the icons used in this website.
+      Font Awesome is used to obtain the icons used in this website.
 
     - [Autoprefixer](https://autoprefixer.github.io/)
 
-    - Autoprefixer was used to add vendor prefixes.
+      Autoprefixer was used to add vendor prefixes.
 
     - [JS hint](https://jshint.com/)
 
-    - Jasmine was used to test this project's JavaScript functions.
+      Jasmine was used to test this project's JavaScript functions.
 
 
 - #### **Back-end**
@@ -284,13 +285,13 @@ The following are elements that could be added to the website in future developm
 The testing data for this project can be found in a separate file called [here](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/TESTING.md).
 
 ### Issues and Solutions
-* travel story cards on small screens overlapped due to no media queries intially. CSS is fixed later
+* Travel story cards on small screens overlapped due to no media queries intially. CSS is fixed later
 * No defensive deletion confirmation added for admin user due to lack of time, but also intended admin user uses due diligence before deleting 
 * While Code validations, found defensive deletion missing for session user in read more page. Fixed later by adding modal
 * Form input for origin_country is not taking spaces intially but later fixed by adjusting pattern attribute
 * While python code is checked for PEP8 requirements, indentation went wrong and edit-story page did not functioned. Indentation fixed later.
 * Edit story page cancel button takes you to home page instead of profile page. Fixed by adjusting the jinja code url.
-* Logged user can delete their comments and feature is not added due to time constraint. Only Admin can delete the comments
+* Logged user cannot delete their comments and feature is not added due to time constraint. Only Admin can delete the comments
 
 ## Deployment
 
@@ -430,8 +431,8 @@ To run this project on your device using the IDE of your choice follow these ste
 
 ### Code
 
-- The JavaScript for the project is adapted from from the bootstrap.com and startbootstrap.com
-- HTML code and css  is also adapted from the template from startbootstrap.com
+- JavaScript for form validation and delete modal is adapted from from the bootstrap.com and startbootstrap.com
+- Major HTML code and css  is also adapted from the template from startbootstrap.com
 - Hero image is from Unsplash.com - Photo by JESHOOTS.COM
 
 ## Acknowledgements

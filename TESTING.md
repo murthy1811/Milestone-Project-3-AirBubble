@@ -18,6 +18,7 @@ ___
 
 - HTML Markup Validation - [pass](https://validator.w3.org/nu/)
   * All pages passed the validator except for errors and warnings due HTML validator not being able to recognize Jinja.
+    Validation is done trhough URL a well and resulted in no errors.
 - CSS Validation - [pass](https://jigsaw.w3.org/css-validator/)
 - JavaScript Code Quality Tool JSHint - [pass](https://jshint.com/)
 - PEP8 - [pass](http://pep8online.com/)
@@ -57,7 +58,7 @@ ___
 
  **Site owner / admin**
 
-* As a site owner of WD Buzzwords, I want to be able to delete entries contributed by registered users if necessary.
+* As a site owner of Air Bubble, I want to be able to delete entries contributed by registered users if necessary.
   - The admin user is authorised to remove any content that is deemed irrelevant or inapropriate.
 
 **[back to top](#testing)**
@@ -84,7 +85,7 @@ ___
   In both cases users see _search_ button that refreshes the page and displays all the stories contained in the website.
   * Clicking on the _Search button_ without entering any value - _Please fill in this field_ message is displayed, prompting users to enter a value. All above described features are working as intended.
 
-  * Reset button is tested, by typing some text and checked if the entry is removed by clicking and the reset button is fucntioning as intended.
+  * Reset button is tested, by typing some text and checked if the page is reloaded by clicking and the reset button is fucntioning as intended.
 
   **Travel stories**
   
@@ -131,13 +132,13 @@ ___
 
 **Share your Story Page**
 
- - New Post
+  New Post
 
 * Share my story button is tested with out entry in any fields and checked if the user is prompted to fill the mandatory fields.
 * Flash message is displayed upon successful entry of the story
 * Home page is checked if the added story is being displayed with a read more button
 
- - Edit post
+  Edit post
 
 * Edit post button from Navbar is tested to see if the user is taken to Profile page for editing their stories
 * Edit button is tested and information is changed and submitted to check if the information is updated. Functioning as intended
@@ -220,7 +221,7 @@ Later, They didn't experience any issues during the testing process and it was c
 
 Performance testing was carried out using Lighthouse in Chrome Developer Tools. The tests had shown good performance and excellent accessibility and best practice results for desktop devices. 
 Steps taken to improve performance for the mobile devices following the initial tests:
-* Added <meta description> to the site to improve best practices
+* Added meta description to the site to improve best practices
 
 ### Browser Compatibility Testing
 
