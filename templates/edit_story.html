@@ -7,7 +7,6 @@
 
 <!-- form html from start bootstrap -->
 <div class="container px-5 my-5">
-
     <form class="needs-validation" id="contactForm" method="POST"
         action="{{url_for('edit_story', story_id = story._id)}}" novalidate>
         <!-- category name -->
@@ -23,11 +22,9 @@
                 {% endfor %}
             </select>
             <label for="category_name">Choose Category</label>
-
             <div class="invalid-feedback">
                 Choose a Category
             </div>
-
         </div>
         <!-- origin airport -->
         <div class="form-row">
@@ -88,8 +85,8 @@
             </div>
             <!--No of adults -->
             <div class="form-floating mb-3">
-                <input class="form-control" id="noOfAdults" name="noOfAdults" type="number"
-                    placeholder="No of Adults" value="{{story.no_of_adults}}" required />
+                <input class="form-control" id="noOfAdults" name="noOfAdults" type="number" placeholder="No of Adults"
+                    value="{{story.no_of_adults}}" required />
                 <label for="noOfAdults">No of Adults</label>
                 <div class="invalid-feedback">
                     No of Adults is required.</div>
@@ -108,10 +105,9 @@
             </div>
             <!-- Covid report-->
             <div class="form-floating mb-3">
-
                 <select class="form-select" id="covidReport" name="covidReport" aria-label="COVID report" required>
-                    <option value="">Select any</option>
-                    <option value="Negative RT PCR needed">Negative RT PCR needed</option>
+                    <option value="" disabled>Select any</option>
+                    <option value="">Negative RT PCR needed</option>
                     <option value="No test report for fully Vaccinated">No test report for
                         fully Vaccinated</option>
                     <option value="Antigen test report only ">Antigen test report only</option>
@@ -122,7 +118,7 @@
             <!-- experience textbox -->
             <div class="form-floating mb-3">
                 <textarea class="form-control" id="experience" name="experience" placeholder="Please share your experience like Quarantine rules, documents needed, rules in transit,
-                     rules related to kids etc" required >{{story.your_experience}}</textarea>
+                     rules related to kids etc" required>{{story.your_experience}}</textarea>
                 <label for="experience">Please share your experience like Quarantine rules,documents needed, rules in
                     transit, rules related to kids etc</label>
                 <div class="invalid-feedback">Please share your experience like Quarantine rules,

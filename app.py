@@ -158,7 +158,7 @@ def add_story():
             "no_of_adults": request.form.get("noOfAdults"),
             "kids_under_12": request.form.get("kidsUnder12"),
             "kids_under_6": request.form.get("kidsUnder6"),
-            "covid_report": request.form.getlist("covidReport"),
+            "covid_report": request.form.get("covidReport"),
             "your_experience": request.form.get("experience"),
             "added_by": session["user"]
             }
@@ -186,7 +186,7 @@ def edit_story(story_id):
             "no_of_adults": request.form.get("noOfAdults"),
             "kids_under_12": request.form.get("kidsUnder12"),
             "kids_under_6": request.form.get("kidsUnder6"),
-            "covid_report": request.form.getlist("covidReport"),
+            "covid_report": request.form.get("covidReport"),
             "your_experience": request.form.get("experience"),
             "added_by": session["user"]
             }

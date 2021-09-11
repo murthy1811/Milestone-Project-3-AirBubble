@@ -292,6 +292,7 @@ The testing data for this project can be found in a separate file called [here](
 * Edit story page cancel button takes you to home page instead of profile page. Fixed by adjusting the jinja code url.
 * Logged user cannot delete their comments and feature is not added due to time constraint. Only Admin can delete the comments
 * Travel story cards width is set to auto to render evenly on smaller screens
+* Form option for Covid report is rendering with square brackets on read more page. Bug not fixed due to time constraint.
 
 ## Deployment
 
