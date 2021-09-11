@@ -106,8 +106,9 @@
             <!-- Covid report-->
             <div class="form-floating mb-3">
                 <select class="form-select" id="covidReport" name="covidReport" aria-label="COVID report" required>
-                    <option value="" disabled>Select any</option>
-                    <option value="">Negative RT PCR needed</option>
+                    <option selected hidden>{{story.covid_report}}</option>
+                    <option value="Select any">Select any</option>
+                    <option value="Negative RT PCR needed">Negative RT PCR needed</option>
                     <option value="No test report for fully Vaccinated">No test report for
                         fully Vaccinated</option>
                     <option value="Antigen test report only ">Antigen test report only</option>
