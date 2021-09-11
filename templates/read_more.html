@@ -141,7 +141,7 @@
                 {{comment.comment}}</p>
         </div>
         <div class="col-12 col-sm-3">
-            <button type="button" class="btn btn-style btn-danger btn-primary confirm" data-toggle="modal">
+            <button type="button" class="btn btn-style btn-danger btn-primary commentConfirm" data-toggle="modal">
                 Delete
             </button>
 
@@ -151,16 +151,16 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modalTitle">Delete this comment?</h5>
+                            <h5 class="modal-title" id="modalCommentTitle">Delete this comment?</h5>
                         </div>
                         <div class="modal-body">
                             <p> Are you sure you want to Delete the comment? </p>
                         </div>
                         <div class="modal-footer">
-                            <a href="{{url_for('read_more', story_id = story._id)}}" id="cancelbutton"
+                            <a href="{{url_for('read_more', story_id = story._id)}}" id="cancelCommentButton"
                                 class="btn btn-secondary" data-dismiss="modal">Cancel</a>
                             <a href="{{url_for('delete_comment', comment_id = comment._id, story_id = story._id)}}"
-                                id="deletebutton" class="btn btn-primary">Delete</a>
+                                id="deleteCommentButton" class="btn btn-primary">Delete</a>
                         </div>
                     </div>
                 </div>

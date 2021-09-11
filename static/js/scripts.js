@@ -28,7 +28,7 @@ $(".confirm").click(function () {
   $('#deleteStory').modal('show');
 });
 
-$(".confirm").click(function () {
+$(".commentConfirm").click(function () {
   $('#deleteComment').modal('show');
 });
 
