@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 /* flash messages styling */
-
 .add_style {
 	padding-top: 50px;
 	color: rgb(44, 10, 238);
 	text-align: center;
 }
 
-
 /* text alignment for headings */
-
 .center-align {
 	text-align: center;
 	padding-top: 10px;
@@ -18,9 +15,7 @@
 	font-family: 'Quicksand', sans-serif;
 }
 
-
 /* styling for stories in read more info */
-
 .form-info {
 	padding-bottom: 20px;
 	font-weight: 400;
@@ -28,23 +23,17 @@
 	font-size: large;
 }
 
-
 /* styling for buttons in edit, profile pages */
-
 .btn-style {
 	margin: 5px;
 }
 
-
 /* navbar styling edited */
-
 .nav-item {
 	padding-left: 10px;
 }
 
-
 /* information on read more styling */
-
 .profile-info {
 	padding-bottom: 50px;
 	font-family: 'Quicksand', 'Arial Narrow', Arial, sans-serif;
@@ -53,9 +42,7 @@
 	text-align: left;
 }
 
-
 /* button on profile for change password */
-
 .btn-change {
 	width: 25%;
 	background-color: #0d6efd;
@@ -78,9 +65,7 @@
 	}
 }
 
-
 /* comments styling on read more page */
-
 .comments-heading {
 	color: darkblue;
 	padding-top: 25px;
@@ -107,38 +92,38 @@
 	padding-bottom: 10px;
 }
 
-
 /* travel story cards styling */
-
 .card {
 	border-radius: 15px;
 	font-family: 'Quicksand', sans-serif;
 	width: auto;
 }
 
-
-
 /* styling for textarea box in stories */
-
 #experience {
 	height: 10rem;
 	padding-top: 31px;
 }
 
-@media(max-width:576px) {
-	#experience {
+@media(max-width:576px) and (min-width:370px){
+	#experience{
 		height: 15rem;
-		padding-top: 90px;
+		padding-top: 45px;
 	}
 }
 
 @media(max-width:800px) and (min-width:580px) {
 	#experience {
 		height: 12rem;
-		padding-top: 55px;
+		padding-top: 30px;
 	}
 }
 
+@media(max-width:369px){
+	#destinationAirportCode, #dateOfJourney, #experience{
+		padding-top: 60px;
+	}
+}
 
 /* font changes across the forms */
 
@@ -147,13 +132,10 @@
 	font-family: 'Quicksand', sans-serif;
 }
 
-#submitButton,
-#sendButton {
+#submitButton,#sendButton {
 	font-family: 'Quicksand', sans-serif;
 }
 
 .btn-font {
 	font-family: 'Quicksand', sans-serif;
 }
-
-

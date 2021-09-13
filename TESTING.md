@@ -163,6 +163,7 @@ ___
 * Admin user is logged in and tested if the admin can be able to delete all the stories when read more button is used
 * Flash message is displayed upon successfull deletion
 * Checked and tested if all the comments made, have delete option visible to the admin.
+* Checked if defensive code for delete modal is working when the delete button is clicked
 
 **[back to top](#testing)**
 

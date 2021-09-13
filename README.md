@@ -204,10 +204,6 @@ The following are elements that could be added to the website in future developm
 
 - A online chat window where all registered users can interact live.
 
-- Admin user is not given confirmation before deletion option due to time constrain, and also with intent that admin will have due diligence before
-  deleting a story
-
-
 ## Technologies Used
 
 - #### **Front-end**
@@ -285,13 +281,13 @@ The following are elements that could be added to the website in future developm
 The testing data for this project can be found in a separate file called [here](https://github.com/murthy1811/Milestone-Project-3-AirBubble/blob/master/TESTING.md).
 
 ### Issues and Solutions
-* No defensive deletion confirmation added for admin user due to lack of time, but also intended admin user uses due diligence before deleting 
 * While Code validations, found defensive deletion missing for session user in read more page. Fixed later by adding modal
 * Form input for origin_country is not taking spaces intially but later fixed by adjusting pattern attribute
 * While python code is checked for PEP8 requirements, indentation went wrong and edit-story page did not functioned. Indentation fixed later.
 * Edit story page cancel button takes you to home page instead of profile page. Fixed by adjusting the jinja code url.
 * Logged user cannot delete their comments and feature is not added due to time constraint. Only Admin can delete the comments
 * Travel story cards width is set to auto to render evenly on smaller screens
+* CovidReport input in Edit my story did not prefilled initially.Fixed by adding additonal option with jinja code and used hidden attribute
 
 
 ## Deployment
